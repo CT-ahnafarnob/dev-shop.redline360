@@ -1,0 +1,76 @@
+{{ 'custom-redline.css' | asset_url | stylesheet_tag }}
+<Style>
+    .{{section.id}} {
+        background-color: {{ section.settings.background_color }};
+        color: {{ section.settings.text_color }};
+        text-align: center;
+        
+        
+        font-family: var(--redline-font-family);
+        box-sizing: border-box;
+       
+    }
+
+    .{{section.id}} .announcement-bar__message {
+       
+
+        font-family: var(--redline-font-family);
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        letter-spacing: 0;
+    }
+    .{{section.id}} a {
+        color: {{ section.settings.text_color }};
+        text-decoration: none;
+    }
+    .{{section.id}}:hover {
+       background-color: var(--redline-ash-color);
+    }
+</Style>
+
+<section class="{{section.id}}">
+    <div>
+        <a href="{{section.settings.link_url}}"><p class="announcement-bar__message">{{section.settings.announcement_text}}</p></a>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Redline Announcement Bar",
+    "enabled_on": {
+        "groups": ["header"]
+    },
+    "settings": [
+        {
+            "type": "text",
+            "id": "announcement_text",
+            "label": "Announcement Text",
+            "default": "Click here: Current Sales and Promotions"
+        },
+        {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background Color",
+            "default": "#f8d7da"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color",
+            "default": "#721c24"
+        },
+        {
+            "type": "url",
+            "id": "link_url",
+            "label": "Enter Link URL",
+        } 
+    ],
+    "presets": [
+        {
+            "name": "Redline Announcement Bar",
+            "category": "Header"
+        }
+        ]
+}
+{% endschema %}
