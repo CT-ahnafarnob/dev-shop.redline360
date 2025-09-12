@@ -11,6 +11,16 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "redline_announcement_bar_kY3kJJ": {
+      "type": "redline-announcement-bar",
+      "name": "Redline Announcement Bar",
+      "settings": {
+        "announcement_text": "Click here: Current Sales and Promotions",
+        "background_color": "#000000",
+        "text_color": "#FFFFFF",
+        "link_url": ""
+      }
+    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -25,6 +35,7 @@
       "block_order": [
         "announcement-bar-0"
       ],
+      "disabled": true,
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
@@ -56,6 +67,7 @@
     }
   },
   "order": [
+    "redline_announcement_bar_kY3kJJ",
     "announcement-bar",
     "header"
   ]
