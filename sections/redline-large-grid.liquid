@@ -1,12 +1,12 @@
 <style>
 .{{section.id}} {
     background-color: var(--redline-ash-color);
+    
     box-sizing: border-box;
     text-align: center;
     overflow: hidden;
-    padding: 0; /* Default: no padding (for desktop widths like 816px) */
+  
 }
-
 .{{section.id}} .heading{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -15,7 +15,6 @@
     align-items: start;
     padding: 50px 50px 10px 50px;
 }
-
 .{{section.id}} .heading h1 {
     font-family: var(--redline-font-family);
     font-weight: 600;
@@ -26,7 +25,6 @@
     text-transform: uppercase;
     margin-top: 0;
 }
-
 .{{section.id}} .heading p {
     font-family: var(--redline-font-family);
     font-size: 14px;
@@ -35,7 +33,6 @@
     font-weight: 400;
     margin-top: 0;
 }
-
 .{{section.id}} .grid-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -51,7 +48,7 @@
     height: 320px;
     margin: 0;
     object-fit: cover;
-    max-width: 230px;
+   
 }
 
 .{{section.id}} .grid-container a {
@@ -67,6 +64,7 @@
     bottom: 8px;
     background-color: rgba(0, 0, 0, 0.3); 
     z-index: 1;
+   
 }
 
 .{{section.id}} .text {
@@ -74,20 +72,18 @@
     bottom: 10px;
     left: 8%;
     z-index: 2;
+    
 }
-
 .{{section.id}} .text h3 {
     font-family: var(--redline-font-family);
     font-size:18px;
     line-height: 20px;
     text-transform: uppercase;
     font-weight: 600;
-    color: #fff;
+    color: rgb(255, 255, 255);
     text-align: left;
     width: 100%;
 }
-
-/* Mobile (<=768px) */
 @media (max-width: 768px) {
     .{{section.id}} .heading{
         grid-template-columns: 1fr;
@@ -113,17 +109,7 @@
     }
 }
 
-/* Laptops and larger screens (>=1000px) */
-@media (min-width: 1000px) {
-    .{{section.id}} {
-        padding: 20px 100px; 
-    }
-}
-@media (min-width: 769px) and (max-width: 999px){
-  .{{section.id}}{ padding: 0 24px; }
-}
 </style>
-
 
 <section class="{{section.id}}">
    
