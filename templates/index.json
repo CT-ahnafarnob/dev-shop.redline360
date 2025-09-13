@@ -38,33 +38,33 @@
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
         "image_behavior": "none",
+        "desktop_content_position": "bottom-center",
         "desktop_content_alignment": "center",
+        "show_text_box": false,
         "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
         "show_text_below": false
       }
     },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
+        "collection": "all",
+        "products_to_show": 8,
         "title": "Featured products",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -72,13 +72,96 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "redline_parts_grid_xHADaE": {
+      "type": "redline-parts-grid",
+      "blocks": {
+        "part_m3EmdN": {
+          "type": "part",
+          "settings": {
+            "part_image": "shopify://shop_images/part-1.webp",
+            "part_name": "Coilovers",
+            "part_link": ""
+          }
+        },
+        "part_DabFMy": {
+          "type": "part",
+          "settings": {
+            "part_image": "shopify://shop_images/part-2.webp",
+            "part_name": "exhaust",
+            "part_link": ""
+          }
+        },
+        "part_zWrVzX": {
+          "type": "part",
+          "settings": {
+            "part_image": "shopify://shop_images/part-3.webp",
+            "part_name": "wheels",
+            "part_link": ""
+          }
+        },
+        "part_AB8qqF": {
+          "type": "part",
+          "settings": {
+            "part_image": "shopify://shop_images/part-4.webp",
+            "part_name": "headlights",
+            "part_link": ""
+          }
+        },
+        "part_6VTcwW": {
+          "type": "part",
+          "settings": {
+            "part_image": "shopify://shop_images/part-5.webp",
+            "part_name": "Headers",
+            "part_link": ""
+          }
+        },
+        "part_WCJAMg": {
+          "type": "part",
+          "settings": {
+            "part_image": "shopify://shop_images/part-6.webp",
+            "part_name": "Shocks",
+            "part_link": ""
+          }
+        },
+        "part_YbaHVV": {
+          "type": "part",
+          "settings": {
+            "part_image": "shopify://shop_images/part-7.webp",
+            "part_name": "Tires",
+            "part_link": ""
+          }
+        },
+        "part_e8UjqV": {
+          "type": "part",
+          "settings": {
+            "part_image": "shopify://shop_images/part-8.webp",
+            "part_name": "seats",
+            "part_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "part_m3EmdN",
+        "part_DabFMy",
+        "part_zWrVzX",
+        "part_AB8qqF",
+        "part_6VTcwW",
+        "part_WCJAMg",
+        "part_YbaHVV",
+        "part_e8UjqV"
+      ],
+      "name": "Redline Part's Grid",
+      "settings": {}
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "redline_parts_grid_xHADaE"
   ]
 }
