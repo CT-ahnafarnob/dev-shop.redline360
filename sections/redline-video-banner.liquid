@@ -1,0 +1,67 @@
+<div class="{{section.id}}">
+    <div class="video-container">
+        <a href="{{ section.settings.video_url }}" target="_blank" rel="noopener noreferrer">
+            <div class="play-button">&#9658;</div>
+        </a>
+    </div>
+    <div class="banner-text">
+        <h1>{{ section.settings.banner_text }}</h1>
+        <h2>{{ section.settings.banner_texth2 }}</h2>
+        <p>{{ section.settings.para_text }}</p>
+        <a href="{{ section.settings.button_link }}" class="btn">{{ section.settings.button_text }}</a>
+    </div>
+
+</div>
+
+{% schema %}
+{
+    "name": "Redline Video Banner",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "background_image",
+            "label": "Background Image"
+        },
+        {
+            "type": "url",
+            "id": "video_url",
+            "label": "Video URL"
+        },
+        {
+            "type": "text",
+            "id": "banner_text",
+            "label": "First Banner Text",
+            "default": "Performance Parts"
+        },
+        {
+            "type": "text",
+            "id": "banner_texth2",
+            "label": "Second Banner Text",
+            "default": "High Performance"
+        },
+        {
+            "type": "text",
+            "id": "para_text",
+            "label": "Banner Paragraph Text",
+            "default": "High Performance"
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link URL"
+        },
+        {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "Shop Now"
+        }
+        ],
+        "presets": [
+            {
+                "name": "Redline Video Banner",
+                "category": "Banner"
+            }
+        ]
+}
+{% endschema %}

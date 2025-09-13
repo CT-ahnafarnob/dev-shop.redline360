@@ -1,0 +1,80 @@
+<style>
+.{{section.id}} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.{{section.id}} .part-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+.{{section.id}} h3 {
+    font-family: var(--redline-font-family);
+    font-size: 18px;
+    color: var(--redline-text-color);
+    line-height: 27px;
+}
+</style>
+
+<div class="{{section.id}}">
+    {% for block in section.blocks %}
+        <div class="part">
+            <a href="{{ block.settings.part_link }}">
+
+                {% if block.settings.part_image != blank %}
+                     <img src="{{ block.settings.part_image | image_url }}" alt="{{ block.settings.part_name }}" class="part-image"/>
+                     {% else %}
+                        <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/part-1.webp?v=1757707889" alt="No Image Available" class="part-image"/>
+                {% endif %}
+               
+                <h3>{{ block.settings.part_name }}</h3>
+            </a>
+        </div>
+    {% endfor %}
+   
+        
+
+{% schema %}
+{
+    "name": "Redline Part's Grid",
+    "settings": [
+            
+        ],
+        "blocks": [
+            {
+                "type": "part",
+                "name": "Part",
+                "limit": 16,
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "part_image",
+                        "label": "Part's Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "part_name",
+                        "label": "Part's Name",
+                        "default": "Part's Name"
+                    },
+                    {
+                        "type": "url",
+                        "id": "part_link",
+                        "label": "Part's Link URL"
+                    }
+                
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Redline Part's Grid",
+                "category": "Custom Sections"
+            }
+        ]
+}
+{% endschema %}

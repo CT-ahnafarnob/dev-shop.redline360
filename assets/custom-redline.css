@@ -1,5 +1,6 @@
 :root {
   --redline-font-family: "Work Sans", sans-serif;
+  --redline-font-family-semiBold: "Work Sans", sans-serif;
   --redline-red-color: #db4540;
   --redline-ash-color: #202020;
   --redline-text-color: #3d4246;
@@ -13,7 +14,20 @@
       format("woff2"),
     url("https://cdn.shopify.com/s/files/1/0607/5393/6592/files/WorkSans-Regular.woff?v=1757651121")
       format("woff");
-  font-weight: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Work Sans";
+  src: url("https://cdn.shopify.com/s/files/1/0607/5393/6592/files/WorkSans-SemiBold.woff2?v=1757699573")
+      format("woff2"),
+    url("https://cdn.shopify.com/s/files/1/0607/5393/6592/files/WorkSans-SemiBold.woff?v=1757699572")
+      format("woff");
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
+}
+
+a {
+  text-decoration: none;
 }

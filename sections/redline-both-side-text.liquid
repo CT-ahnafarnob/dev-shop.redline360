@@ -1,0 +1,168 @@
+{{ 'custom-redline.css' | asset_url | stylesheet_tag }}
+<style>
+    .{{section.id}}{
+        background-color: {{section.settings.background_color}};
+        color: {{section.settings.text_color}};
+        padding: 80px;
+        height: 72vh;
+    }
+
+     .{{section.id}} .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: space-between;
+        align-items: center;
+        gap: 40px;
+     }
+     
+     .{{section.id}} .container h1{
+        font-family: var(--redline-font-family);
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 43px;
+        letter-spacing: -2px;
+        color: white;
+        text-transform: uppercase;
+        width: 90%;
+     }
+     .{{section.id}} .container h3{
+        font-family: var(--redline-font-family);
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0px;
+        color: #febaba;
+        margin-bottom: 30px;
+     }
+     .{{section.id}} .container .right-side h3{
+        font-family: var(--redline-font-family-semibold);
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0px;
+        color: #ffffff;
+     }
+.{{section.id}} .container .right-side p{
+   font-family: var(--redline-font-family);
+   font-size: 16px;
+   color: #ffffff;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.{{section.id}} .btn {
+    border: 2px solid #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    
+}
+.{{section.id}} .btn:hover {
+    color: black;
+    border: 2px solid #000000;
+}
+
+.{{section.id}} a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: var(--redline-font-family-semibold);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+}
+@media (max-width: 768px) {
+    .{{section.id}} {
+        padding: 40px 20px;
+        height: auto;
+    }
+    .{{section.id}} .container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: left;
+    }
+    .{{section.id}} .container h1 {
+        font-size: 28px;
+        line-height: 34px;
+        width: 100%;
+    }
+    .{{section.id}} .container h3 {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 20px;
+    }
+    .{{section.id}} .container .right-side h3 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .{{section.id}} .container .right-side p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+}
+</style>
+<section class="{{section.id}}">
+    <div class="container">
+        <div>
+            <h1>{{ section.settings.left_text }}</h1>
+            <h3>{{section.settings.left_para}}</h3>
+            <a href="#" class="btn"> Learn More About Us</a>
+        </div>
+        
+        <div class="right-side">
+            <p  class="chk">{{section.settings.right_text}}</p>
+            <h3>{{section.settings.right_para}}</h3>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Redline Both Side Text",
+    "settings": [
+        {
+            "type": "text",
+            "id": "left_text",
+            "label": "Left Text",
+            "default": "REDLINE360 Is Your Premier Source for High-Performance Parts"
+        },
+         {
+            "type": "text",
+            "id": "left_para",
+            "label": "Left Text",
+            "default": "We specialize in the best aftermarket performance car and truck parts and pride ourselves on exceptional customer service."
+        },
+        {
+            "type": "richtext",
+            "id": "right_text",
+            "label": "Right Text",
+            "default": "<p>We have a network of seven distribution warehouses around the United States and ship from the closest warehouse that has the part you ordered in stock. We primarily ship from California, Nevada, Florida, Texas, Arizona, Michigan, and Pennsylvania, and in the future, we will be offering pick-up services in California. See the page of Redline360 Reviews!</p>"
+        },
+        {
+            "type": "text",
+            "id": "right_para",
+            "label": "Right Paragraph",
+            "default": "Subscribe to our email list for coupons, specials, and new product announcements."
+        },
+        {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background Color",
+            "default": "#db4540"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color",
+            "default": "#FFFFFF"
+        }
+        ],
+        "presets": [
+            {
+                "name": "Redline Both Side Text"
+
+            }
+        ]
+}
+{% endschema %}
