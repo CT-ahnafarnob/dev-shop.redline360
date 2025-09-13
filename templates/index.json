@@ -157,11 +157,114 @@
       ],
       "name": "Redline Part's Grid",
       "settings": {}
+    },
+    "redline_large_grid_DYAkUa": {
+      "type": "redline-large-grid",
+      "blocks": {
+        "car_parts_p3tVdr": {
+          "type": "car_parts",
+          "settings": {
+            "parts_image": "shopify://shop_images/car-1.webp",
+            "parts_name": "COILOVERS",
+            "link": "shopify://products/beaufort-mens-deodorant"
+          }
+        },
+        "car_parts_cbp8xr": {
+          "type": "car_parts",
+          "settings": {
+            "parts_image": "shopify://shop_images/car-2.jpg",
+            "parts_name": "SUSPENSION",
+            "link": "shopify://pages/about-page"
+          }
+        },
+        "car_parts_BjxycM": {
+          "type": "car_parts",
+          "settings": {
+            "parts_image": "shopify://shop_images/car-3.webp",
+            "parts_name": "EXHAUST SYSTEMS",
+            "link": "shopify://pages/our-history"
+          }
+        },
+        "car_parts_mKFN9x": {
+          "type": "car_parts",
+          "settings": {
+            "parts_image": "shopify://shop_images/car-4.webp",
+            "parts_name": "Tein Coilovers - street basis Z advanceed - Nissan 350Z",
+            "link": ""
+          }
+        },
+        "car_parts_J7iaHX": {
+          "type": "car_parts",
+          "settings": {
+            "parts_image": "shopify://shop_images/car-6.avif",
+            "parts_name": "LIGHTING",
+            "link": ""
+          }
+        },
+        "car_parts_QaYMHX": {
+          "type": "car_parts",
+          "settings": {
+            "parts_image": "shopify://shop_images/car-5.webp",
+            "parts_name": "GODSPEED COILOVERS - MONOSS, MONORS AND MAXX",
+            "link": "shopify://blogs/news/test-blog-macbook"
+          }
+        },
+        "car_parts_pA8RMX": {
+          "type": "car_parts",
+          "settings": {
+            "parts_image": "shopify://shop_images/car-6.webp",
+            "parts_name": "WHEELS, TIRES, LUG NUTS & MORE",
+            "link": ""
+          }
+        },
+        "car_parts_GFxjKj": {
+          "type": "car_parts",
+          "settings": {
+            "parts_image": "shopify://shop_images/car-7.webp",
+            "parts_name": "MEGAN RACING",
+            "link": ""
+          }
+        },
+        "car_parts_3qpP4Q": {
+          "type": "car_parts",
+          "settings": {
+            "parts_image": "shopify://shop_images/car-8.webp",
+            "parts_name": "SPEC-D TUNING",
+            "link": ""
+          }
+        },
+        "car_parts_JW97mV": {
+          "type": "car_parts",
+          "settings": {
+            "parts_image": "shopify://shop_images/car-9.webp",
+            "parts_name": "BRAKES",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "car_parts_p3tVdr",
+        "car_parts_cbp8xr",
+        "car_parts_BjxycM",
+        "car_parts_mKFN9x",
+        "car_parts_J7iaHX",
+        "car_parts_QaYMHX",
+        "car_parts_pA8RMX",
+        "car_parts_GFxjKj",
+        "car_parts_3qpP4Q",
+        "car_parts_JW97mV"
+      ],
+      "name": "Redline Large Grid",
+      "settings": {
+        "heading": "Browse Our Latest Performance Car Parts",
+        "content": "Time to upgrade—new performance parts just hit our store! From advanced coilovers and upgraded suspension to high-flow air filters and fuel management kits, we’ve got the latest gear to improve your ride’s power and handling. Get your hands on the newest performance parts online."
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
-    "redline_parts_grid_xHADaE"
+    "redline_parts_grid_xHADaE",
+    "redline_large_grid_DYAkUa"
   ]
 }
