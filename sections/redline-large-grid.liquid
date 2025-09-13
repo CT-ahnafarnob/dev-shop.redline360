@@ -1,143 +1,151 @@
 <style>
 .{{section.id}} {
-    background-color: var(--redline-ash-color);
-    box-sizing: border-box;
-    text-align: center;
-    overflow: hidden;
-  
+  background-color: var(--redline-ash-color);
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
 }
+
+/* Heading */
 .{{section.id}} .heading{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    text-align: left;
-    align-items: start;
-    padding: 50px 50px 10px 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  text-align: left;
+  align-items: start;
+  padding: 50px 50px 10px 50px;
 }
 .{{section.id}} .heading h1 {
-    font-family: var(--redline-font-family);
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 36px;
-    letter-spacing: -2px;
-    color: white;
-    text-transform: uppercase;
-    margin-top: 0;
+  font-family: var(--redline-font-family);
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -2px;
+  color: white;
+  text-transform: uppercase;
+  margin-top: 0;
 }
 .{{section.id}} .heading p {
-    font-family: var(--redline-font-family);
-    font-size: 14px;
-    line-height: 22px;
-    color: #ffffff;
-    font-weight: 400;
-    margin-top: 0;
+  font-family: var(--redline-font-family);
+  font-size: 14px;
+  line-height: 22px;
+  color: #ffffff;
+  font-weight: 400;
+  margin-top: 0;
 }
+
+/* Outer spacing around the grid (not per-item) */
 .{{section.id}} .grid-wrapper {
-    padding: 50px;
+  padding: 50px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
+
+/* Grid: no padding, use gap for item spacing */
 .{{section.id}} .grid-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    justify-items: center;
-    gap: 20px;
-    box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  justify-items: stretch; /* let items fill the track */
+  gap: 20px;
+  box-sizing: border-box;
+  padding: 0;
 }
 
+/* Each card fills its track; optional max width to avoid super-wide cards */
+.{{section.id}} .grid-container > a {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 230px;
+  margin: 0 auto;
+  text-decoration: none;
+}
+
+/* Images scale with the card width */
 .{{section.id}} .grid-container .parts-image {
-    width: 230px;
-    height: 320px;
-    margin: 0;
-    object-fit: cover;
-   
-}
-
-.{{section.id}} .grid-container a {
-    position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 23 / 32;
+  object-fit: cover;
+  margin: 0;
 }
 
 .{{section.id}} .grid-container a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 8px;
-    background-color: rgba(0, 0, 0, 0.3); 
-    z-index: 1;
-   
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  background-color: rgba(0, 0, 0, 0.3); 
+  z-index: 1;
 }
 
 .{{section.id}} .text {
-    position: absolute;
-    bottom: 10px;
-    left: 8%;
-    z-index: 2;
-    
+  position: absolute;
+  bottom: 10px;
+  left: 8%;
+  z-index: 2;
 }
 .{{section.id}} .text h3 {
-    font-family: var(--redline-font-family);
-    font-size:18px;
-    line-height: 20px;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: rgb(255, 255, 255);
-    text-align: left;
-    width: 100%;
-}
-@media (max-width: 768px) {
-    .{{section.id}} .heading{
-        grid-template-columns: 1fr;
-        padding: 20px;
-        text-align: left;
-    }
-    .{{section.id}} .heading h1 {
-        font-size: 24px;
-        line-height: 30px;
-    }
-    .{{section.id}} .heading p {
-        font-size: 14px;
-        line-height: 20px;
-    }
-    .{{section.id}} .grid-container {
-        grid-template-columns: repeat(2,1fr);
-        padding: 20px;
-        gap: 10px;
-    }
-    .{{section.id}} .grid-container .parts-image {
-        width: 150px;
-        height: 220px;
-    }
+  font-family: var(--redline-font-family);
+  font-size:18px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  text-align: left;
+  width: 100%;
 }
 
+/* Mobile */
+@media (max-width: 768px) {
+  .{{section.id}} .heading{
+    grid-template-columns: 1fr;
+    padding: 20px;
+    text-align: left;
+  }
+  .{{section.id}} .heading h1 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .{{section.id}} .heading p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .{{section.id}} .grid-wrapper {
+    padding: 20px; /* outer spacing scales down */
+  }
+  .{{section.id}} .grid-container {
+    /* keep fluid columns; gap already reduced */
+    gap: 10px;
+  }
+}
 </style>
 
 <section class="{{section.id}}">
-   
-        <div class="heading">
-        <h1>{{ section.settings.heading }}</h1>
-        <p>{{ section.settings.content }}</p>
-        </div>
+  <div class="heading">
+    <h1>{{ section.settings.heading }}</h1>
+    <p>{{ section.settings.content }}</p>
+  </div>
 
-
-    <div class="grid-wrapper">   
-
-        <div class="grid-container">
-                {% for block in section.blocks %}
-                <a href="{{ block.settings.link }}">
-                    {% if block.settings.parts_image != blank %}
-                        <img src="{{ block.settings.parts_image | image_url }}" width="100" height="100" alt="{{ block.settings.parts_name }}" class="parts-image"/>
-                            {% else %}
-                        <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/car-1.webp?v=1757733385" width="100" height="100" alt="No Image Available" class="parts-image"/>
-                    {% endif %}
-                    <div class="text">
-                    <h3>{{ block.settings.parts_name }}</h3>
-                </div>
-                </a>
-            {% endfor %}
-        </div>
-
+  <div class="grid-wrapper">
+    <div class="grid-container">
+      {% for block in section.blocks %}
+        <a href="{{ block.settings.link }}">
+          {% if block.settings.parts_image != blank %}
+            <img src="{{ block.settings.parts_image | image_url }}" width="100" height="100" alt="{{ block.settings.parts_name }}" class="parts-image"/>
+          {% else %}
+            <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/car-1.webp?v=1757733385" width="100" height="100" alt="No Image Available" class="parts-image"/>
+          {% endif %}
+          <div class="text">
+            <h3>{{ block.settings.parts_name }}</h3>
+          </div>
+        </a>
+      {% endfor %}
     </div>
-
+  </div>
 </section>
 
 {% schema %}
