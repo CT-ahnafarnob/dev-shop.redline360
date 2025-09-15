@@ -1,3 +1,5 @@
+{{ 'custom-redline.css' | asset_url | stylesheet_tag }}
+
 <style>
 .{{section.id}} {
     background-color: var(--redline-ash-color);
@@ -29,8 +31,8 @@
     font-family: var(--redline-font-family);
     font-size: 14px;
     line-height: 22px;
-    color: #ffffff;
-    font-weight: 400;
+    color: #9d9d9d;
+    font-weight: 600;
     margin-top: 0;
 }
 .{{section.id}} .grid-container {
@@ -108,11 +110,7 @@
         height: 220px;
     }
 }
- @media (min-width: 1000px) {
-    .{{section.id}} {
-        padding: 20px 100px; 
-    }
-}
+
 </style>
 
 <section class="{{section.id}}">
