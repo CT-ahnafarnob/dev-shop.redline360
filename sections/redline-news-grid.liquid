@@ -5,29 +5,52 @@
         text-align: center;
         overflow: hidden;
         max-width: 1920px;
+        
     }
     
     .{{section.id}} .heading{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        gap: 40px;
         text-align: left;
         align-items: start;
-        padding: 50px 50px 10px 50px;
-       
+        padding: 30px 100px;
     }
     
     .{{section.id}} .heading h1 {
         font-family: var(--redline-font-family);
         font-weight: 600;
-        font-size: 28px;
-        line-height: 36px;
-        letter-spacing: -2px;
-        color: rgb(0, 0, 0);
+        font-size: 26px;
+        line-height: 31px;
+        letter-spacing: -1px;
+        color: #6c7073;
         text-transform: uppercase;
         margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 60%;
+    
+    }
+    /* button */
+     .{{section.id}} .btn {
+        margin-top: 30px;
+        background-color: #CF3130;
+        color: white;
+        padding: 5px 20px;
+        border-radius: 3px;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 14px;
+    
     }
     
+    .{{section.id}} .btn:hover {
+        color: black;
+        border: 2px solid #000000;
+    }
+
     .{{section.id}} .heading p {
         font-family: var(--redline-font-family);
         font-size: 14px;
@@ -43,7 +66,8 @@
         gap: 20px;
         box-sizing: border-box;
         justify-items: center;
-        padding: 20px 80px;
+        padding: 20px 100px;
+
     }
     
     .{{section.id}} .news-item {
@@ -105,20 +129,8 @@
             margin: 0;
             object-fit: cover;
     }
-    
-    .{{section.id}} .btn {
-    border: 2px solid #d90000;
-    padding: 10px 80px;
-    border-radius: 5px;
-    width: 40%
-    }
-    
-    .{{section.id}} .btn:hover {
-        color: black;
-        border: 2px solid #000000;
-    }
 
-
+    
          @media (max-width: 768px) {
         .{{section.id}} .news-grid {
             grid-template-columns: 1fr;
@@ -126,9 +138,26 @@
         }
         
         .{{section.id}} .heading {
-            grid-template-columns: 1fr;
-            padding: 30px 20px 10px 20px;
+            flex-direction: column;
+            padding: 5px;
+            gap: 0;
+        } 
+        
+        .{{section.id}} .heading h1 {
+            width: 100%;
+            align-items: center;
+            padding: 20px 20px 0 20px;
+            color: #312e2e;
         }
+         .{{section.id}} .btn {
+            margin-top: 10px;
+            
+    }
+        .{{section.id}} .heading p {
+            padding: 0 20px;
+            
+        }
+            
     }
     
     @media (min-width: 769px) and (max-width: 1024px) {
@@ -140,9 +169,11 @@
 
 <section class="{{section.id}}">
     <div class="heading">
-        <h1>{{ section.settings.heading }}</h1>
+        <h1>{{ section.settings.heading }} 
+              <a href="{{section.settings.btttn}}" class="btn">{{ section.settings.btn_label }}</a>
+        </h1>
         <p>{{ section.settings.content }}</p>
-        <a href="{{section.settings.btttn}}" class="btn">{{ section.settings.btn_label }}</a>
+      
         
     </div>
     
