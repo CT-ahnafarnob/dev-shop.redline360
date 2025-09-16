@@ -77,6 +77,18 @@
         "padding_bottom": 36
       }
     },
+    "redline_both_side_text_abNphC": {
+      "type": "redline-both-side-text",
+      "name": "Redline Both Side Text",
+      "settings": {
+        "left_text": "REDLINE360 Is Your Premier Source for High-Performance Parts",
+        "left_para": "We specialize in the best aftermarket performance car and truck parts and pride ourselves on exceptional customer service.",
+        "right_text": "<p>We have a network of seven distribution warehouses around the United States and ship from the closest warehouse that has the part you ordered in stock. We primarily ship from California, Nevada, Florida, Texas, Arizona, Michigan, and Pennsylvania, and in the future, we will be offering pick-up services in California. See the page of Redline360 Reviews!</p>",
+        "right_para": "Subscribe to our email list for coupons, specials, and new product announcements.",
+        "background_color": "#db4540",
+        "text_color": "#ffffff"
+      }
+    },
     "redline_parts_grid_xHADaE": {
       "type": "redline-parts-grid",
       "blocks": {
@@ -260,16 +272,40 @@
         "content": "Time to upgrade—new performance parts just hit our store! From advanced coilovers and upgraded suspension to high-flow air filters and fuel management kits, we’ve got the latest gear to improve your ride’s power and handling. Get your hands on the newest performance parts online."
       }
     },
-    "redline_both_side_text_abNphC": {
-      "type": "redline-both-side-text",
-      "name": "Redline Both Side Text",
+    "redline_news_grid_gREHK4": {
+      "type": "redline-news-grid",
+      "blocks": {
+        "news_list_zTf7Np": {
+          "type": "news_list",
+          "settings": {
+            "blog_post_link": "news/rival-4x4-now-available-at-redline360-installation-available"
+          }
+        },
+        "news_list_3mLgbA": {
+          "type": "news_list",
+          "settings": {
+            "blog_post_link": "news/the-best-bilstein-shocks-for-toyota-tacoma-complete-guide"
+          }
+        },
+        "news_list_CxAcM7": {
+          "type": "news_list",
+          "settings": {
+            "blog_post_link": "news/test-blog-macbook"
+          }
+        }
+      },
+      "block_order": [
+        "news_list_zTf7Np",
+        "news_list_3mLgbA",
+        "news_list_CxAcM7"
+      ],
+      "name": "Redline News Grid",
       "settings": {
-        "left_text": "REDLINE360 Is Your Premier Source for High-Performance Parts",
-        "left_para": "We specialize in the best aftermarket performance car and truck parts and pride ourselves on exceptional customer service.",
-        "right_text": "<p>We have a network of seven distribution warehouses around the United States and ship from the closest warehouse that has the part you ordered in stock. We primarily ship from California, Nevada, Florida, Texas, Arizona, Michigan, and Pennsylvania, and in the future, we will be offering pick-up services in California. See the page of Redline360 Reviews!</p>",
-        "right_para": "Subscribe to our email list for coupons, specials, and new product announcements.",
-        "background_color": "#db4540",
-        "text_color": "#FFFFFF"
+        "heading": "What's the Latest?",
+        "content": "Stay updated with our blog, where we share industry insights and tips—from choosing the best performance shock upgrades to exploring turbocharger innovations and suspension enhancements. Learn more to stay ahead of the game!",
+        "btn": "",
+        "btn_label": "Read more news",
+        "background_color": "#ffffff"
       }
     }
   },
@@ -278,6 +314,7 @@
     "featured_collection",
     "redline_both_side_text_abNphC",
     "redline_parts_grid_xHADaE",
-    "redline_large_grid_DYAkUa"
+    "redline_large_grid_DYAkUa",
+    "redline_news_grid_gREHK4"
   ]
 }
