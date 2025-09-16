@@ -307,6 +307,35 @@
         "btn_label": "Read more news",
         "background_color": "#ffffff"
       }
+    },
+    "redline_happening_news_Xtz6X3": {
+      "type": "redline-happening-news",
+      "blocks": {
+        "news_list_kbdn76": {
+          "type": "news_list",
+          "settings": {
+            "blog_post_link": "news/camerons-modified-2017-toyota-86"
+          }
+        },
+        "news_list_nwPTq3": {
+          "type": "news_list",
+          "settings": {
+            "blog_post_link": "news/modified-2011-scion-tc-urban-assault-style"
+          }
+        }
+      },
+      "block_order": [
+        "news_list_kbdn76",
+        "news_list_nwPTq3"
+      ],
+      "name": "Redline Whats Happening Column",
+      "settings": {
+        "heading": "What’s Happening at REDLINE360?",
+        "content": "Stay updated with our blog, where we share industry insights and tips—from choosing the best performance shock upgrades to exploring turbocharger innovations and suspension enhancements. Learn more to stay ahead of the game!",
+        "btn": "",
+        "btn_label": "Read more news",
+        "background_color": "#202020"
+      }
     }
   },
   "order": [
@@ -315,6 +344,7 @@
     "redline_both_side_text_abNphC",
     "redline_parts_grid_xHADaE",
     "redline_large_grid_DYAkUa",
-    "redline_news_grid_gREHK4"
+    "redline_news_grid_gREHK4",
+    "redline_happening_news_Xtz6X3"
   ]
 }
