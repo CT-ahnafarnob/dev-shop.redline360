@@ -1,0 +1,258 @@
+<style>
+    .{{section.id}} {
+        background-color: {{section.settings.background_color}};
+        box-sizing: border-box;
+        text-align: center;
+        overflow: hidden;
+        max-width: 1920px;
+        
+    }
+    
+    .{{section.id}} .heading{
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        text-align: left;
+        align-items: start;
+        padding: 40px 100px;
+        padding-bottom: 0;
+    }
+    
+    .{{section.id}} .heading h1 {
+        font-family: var(--redline-font-family);
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 31px;
+        letter-spacing: -1px;
+        color: #ffffff;
+        text-transform: uppercase;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 60%;
+    
+    }
+    /* button */
+     .{{section.id}} .btn {
+        margin-top: 20px;
+        background-color: #CF3130;
+        color: white;
+        padding: 5px 20px;
+        border-radius: 3px;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+    
+    .{{section.id}} .btn:hover {
+        color: var(--redline-text-color);     
+    }
+
+    .{{section.id}} .heading p {
+        font-family: var(--redline-font-family);
+        font-size: 14px;
+        line-height: 22px;
+        color: #ffffff;
+        font-weight: 600;
+        margin-top: 0;
+    }
+    
+    .{{section.id}} .news-grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        box-sizing: border-box;
+        justify-items: center;
+        padding: 30px 100px;
+        padding-top: 0;
+
+    }
+    
+    .{{section.id}} .news-item {
+        overflow: hidden;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+    }
+
+  .{{section.id}} .news-image {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+       
+    }
+
+    .{{section.id}} .news-content {
+        position: absolute;
+        bottom: 0pX;
+        padding: 20px 8PX;
+        text-align: left;
+        z-index: 2;
+    }
+        
+    .{{section.id}} .news-image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 8px;
+        background-color: rgba(0, 0, 0, 0.3); 
+        z-index: 1;  
+    }
+
+    .{{section.id}} .news-content h3 {
+        font-family: var(--redline-font-family);
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+        color: #ffffff;
+        margin: 0 0 12px 0;
+        text-transform: uppercase;
+        letter-spacing: -0.5px;
+    }
+
+    .{{section.id}} .news-content p {
+        font-family: var(--redline-font-family);
+        font-size: 14px;
+        line-height: 20px;
+        color: #ffffff;
+        margin: 0;
+        margin-left: 0;
+       
+    }
+
+    .{{section.id}} .news-grid img{
+        width: 100%;
+        min-height: 350px;
+        margin: 0;
+        object-fit: cover;
+    }
+
+
+    @media (max-width: 768px) {
+    .{{section.id}} .news-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+        
+    .{{section.id}} .heading {
+        flex-direction: column;
+        padding: 5px;
+        gap: 0;
+    } 
+        
+    .{{section.id}} .heading h1 {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 20px 20px 0 20px;
+        color: #ffffff;
+    }
+
+    .{{section.id}} .btn {
+        margin-top: 10px;       
+    }
+        
+    .{{section.id}} .heading p {
+        padding: 0 20px;
+        color:rgb(128, 124, 124);  
+    }
+
+}
+
+</style>
+
+<section class="{{section.id}}">
+    <div class="heading">
+        <h1>{{ section.settings.heading }} 
+              <a href="{{section.settings.btttn}}" class="btn">{{ section.settings.btn_label }}</a>
+        </h1>
+        <p>{{ section.settings.content }}</p>
+    </div>
+    
+    <div class="news-grid">
+        {% for block in section.blocks %}
+            {% if block.type == 'news_list' and block.settings.blog_post_link %}
+                {% assign article = block.settings.blog_post_link %}
+                <a href="{{ article.url }}" class="news-item">
+                    <div class="news-image">
+                        {% if article.image %}
+                            <img src="{{ article.image | image_url  }}" width="100" height="100" alt="{{ article.image.alt | default: article.title }}">
+                        {% else %}
+                            <img src="{{ 'newsplaceholder.webp' | asset_url }}" width="100" height="100" alt="No image available">
+                        {% endif %}
+                          <div class="news-content">
+                        {% comment %} <div class="news-date">{{ article.published_at | date: '%B %d, %Y' }}</div> {% endcomment %}
+                        <h3>{{ article.title }}</h3>
+                        <p>{{ article.excerpt | default: article.content | strip_html | truncate: 145 }}</p>
+                    </div>
+                    </div>
+                  
+                </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Redline Happening Column",
+    "disabled_on": {
+        "groups": ["header", "footer"]
+    },
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading Left",
+            "default": "What’s Happening at REDLINE360?"
+        },
+        {
+            "type": "textarea",
+            "id": "content",
+            "label": "Description",
+            "default": "Stay updated with our blog, where we share industry insights and tips—from choosing the best performance shock upgrades to exploring turbocharger innovations and suspension enhancements. Learn more to stay ahead of the game!"
+        },
+        {
+            "type": "url",
+            "id": "btn",
+            "label": "Read more news"
+        },
+        {
+            "type": "text",
+            "id": "btn_label",
+            "label": "Read more news text",
+            "default": "Read more news"
+
+        },
+        {
+            "type": "color",
+            "id": "background_color",
+            "label": "Section Background Color",
+            "default": "#202020"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "news_list",
+            "name": "Latest News",
+            "settings": [
+                {
+                    "type": "article",
+                    "id": "blog_post_link",
+                    "label": "Select Blog Post"
+                }
+            ]
+        }
+    ],
+    "max_blocks": 4,
+    "presets": [
+        {
+            "name": "Redline Whats Happening Column",
+            "category": "Custom Sections"
+        }
+    ]
+}
+{% endschema %}
