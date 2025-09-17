@@ -1,0 +1,146 @@
+<style>
+.{{section.id}} {
+    background-image: url(https://cdn.shopify.com/s/files/1/0607/5393/6592/files/background-2.webp?v=1758073196);
+    position: relative;
+    height: 65vh;
+    min-height: 400px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 0;
+    text-align:center;
+}
+.{{section.id}}::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.8); 
+    z-index: 1;
+}
+
+  .{{section.id}} .largebtn{
+    padding: 12px 18px;
+    border-radius: 5px;
+    font-family: var(--redline-font-family);
+     
+  }
+
+  .{{section.id}} .container{
+    position: relative;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    
+  }
+  .{{section.id}} .container h1{
+    font-family: var(--redline-font-family);
+    font-size: 33px;
+    line-height: 40px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    color: #fff;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    max-width: 500px;
+    margin: 0 auto; 
+    padding: 0 20px;
+  }
+  .{{section.id}} .container p{
+     font-family: var(--redline-font-family);
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+    word-spacing: -1px;
+    max-width: 800px;
+    margin: 20px auto; 
+    padding: 0 20px;
+  }
+
+  @media (max-width: 768px) {
+    .{{section.id}} {
+        height: 50vh;
+        min-height: 350px;
+    }
+    
+    .{{section.id}} .container {
+        padding: 0 15px;
+    }
+    
+    .{{section.id}} .container h1 {
+        font-size: 24px;
+        line-height: 30px;
+        max-width: 100%;
+        margin-bottom: 12px;
+    }
+    
+    .{{section.id}} .container p {
+        font-size: 14px;
+        line-height: 22px;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .{{section.id}} .largebtn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}
+</style>
+
+
+<section class="{{section.id}}">
+    <div class="container">
+        <h1>{{section.settings.title}}</h1>
+        <div class="content"><p>{{section.settings.content}}</p></div>
+        
+     
+        <a href="{{section.settings.url}} " class="btn largebtn" >{{section.settings.btn_label}}</a>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Redline Image Banner",
+    "disabled_on": {
+        "groups": ["header","footer"]
+    },
+    "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default":"2023 Honda Civic Type-R Specs & Release Info"
+            },
+            {
+                "type": "text",
+                "id": "content",
+                "label": "Content",
+                "default":"Will Honda's new 2023 Civic Type-R live up to the hype? Check out our article and video on the new sports car from Honda"
+            },
+            {
+                "type": "url",
+                "id": "url",
+                "label": "Add Link"
+            },
+            {
+                "type": "text",
+                "id": "btn_label",
+                "label": "Add Button Text",
+                "default": "Read More"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Redline Image Banner",
+                "category": "Custom Sections"
+            }
+        ]
+}
+{% endschema %}
