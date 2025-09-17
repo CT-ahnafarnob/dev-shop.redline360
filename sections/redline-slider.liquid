@@ -122,7 +122,9 @@
     </div>
 </section>
 
-<script>$('.responsive').slick({
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+$('.responsive').slick({
     arrows: true,
     dots: false, 
     infinite: true,
@@ -160,7 +162,10 @@
     // settings: "unslick"
     // instead of a settings object
   ]
-});</script>
+});
+});
+
+</script>
 {% schema %}
 {
     "name": "Redline Slider",
