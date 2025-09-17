@@ -35,6 +35,7 @@
         "heading",
         "button"
       ],
+      "disabled": true,
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
@@ -48,45 +49,16 @@
         "show_text_below": false
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "disabled": true,
+    "redline_video_banner_EcQ9pp": {
+      "type": "redline-video-banner",
+      "name": "Redline Video Hero Banner",
       "settings": {
-        "collection": "all",
-        "products_to_show": 8,
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
-      }
-    },
-    "redline_both_side_text_abNphC": {
-      "type": "redline-both-side-text",
-      "name": "Redline Both Side Text",
-      "settings": {
-        "left_text": "REDLINE360 Is Your Premier Source for High-Performance Parts",
-        "left_para": "We specialize in the best aftermarket performance car and truck parts and pride ourselves on exceptional customer service.",
-        "right_text": "<p>We have a network of seven distribution warehouses around the United States and ship from the closest warehouse that has the part you ordered in stock. We primarily ship from California, Nevada, Florida, Texas, Arizona, Michigan, and Pennsylvania, and in the future, we will be offering pick-up services in California. See the page of Redline360 Reviews!</p>",
-        "right_para": "Subscribe to our email list for coupons, specials, and new product announcements.",
-        "background_color": "#db4540",
-        "text_color": "#ffffff"
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/c4c88746c57c4d97881d35f94d6c7295.mp4",
+        "title": "Performance Parts",
+        "title2": "High Performance",
+        "content": "Shipping from 7 Locations around the US. Visit our installation facility in Northern California",
+        "url": "",
+        "btn_label": "Shop By Car"
       }
     },
     "redline_parts_grid_xHADaE": {
@@ -169,6 +141,47 @@
       ],
       "name": "Redline Part's Grid",
       "settings": {}
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "collection": "all",
+        "products_to_show": 8,
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "redline_both_side_text_abNphC": {
+      "type": "redline-both-side-text",
+      "name": "Redline Both Side Text",
+      "settings": {
+        "left_text": "REDLINE360 Is Your Premier Source for High-Performance Parts",
+        "left_para": "We specialize in the best aftermarket performance car and truck parts and pride ourselves on exceptional customer service.",
+        "right_text": "<p>We have a network of seven distribution warehouses around the United States and ship from the closest warehouse that has the part you ordered in stock. We primarily ship from California, Nevada, Florida, Texas, Arizona, Michigan, and Pennsylvania, and in the future, we will be offering pick-up services in California. See the page of Redline360 Reviews!</p>",
+        "right_para": "Subscribe to our email list for coupons, specials, and new product announcements.",
+        "background_color": "#db4540",
+        "text_color": "#ffffff"
+      }
     },
     "redline_large_grid_DYAkUa": {
       "type": "redline-large-grid",
@@ -308,6 +321,16 @@
         "background_color": "#ffffff"
       }
     },
+    "redline_image_banner_YGKtBJ": {
+      "type": "redline-imageBanner",
+      "name": "Redline Image Banner",
+      "settings": {
+        "title": "2023 Honda Civic Type-R Specs & Release Info",
+        "content": "Will Honda's new 2023 Civic Type-R live up to the hype? Check out our article and video on the new sports car from Honda",
+        "url": "",
+        "btn_label": "Read More"
+      }
+    },
     "redline_happening_news_Xtz6X3": {
       "type": "redline-happening-news",
       "blocks": {
@@ -336,15 +359,29 @@
         "btn_label": "Read more news",
         "background_color": "#202020"
       }
+    },
+    "redline_image_banner_4qWkVQ": {
+      "type": "redline-imageBanner",
+      "name": "Redline Image Banner",
+      "settings": {
+        "background_image": "shopify://shop_images/background_car.webp",
+        "title": "The best parts at the best prices.",
+        "content": "Our mission is to bring you the best parts at the unapologetically low prices.",
+        "url": "",
+        "btn_label": "Shop now"
+      }
     }
   },
   "order": [
     "image_banner",
+    "redline_video_banner_EcQ9pp",
+    "redline_parts_grid_xHADaE",
     "featured_collection",
     "redline_both_side_text_abNphC",
-    "redline_parts_grid_xHADaE",
     "redline_large_grid_DYAkUa",
     "redline_news_grid_gREHK4",
-    "redline_happening_news_Xtz6X3"
+    "redline_image_banner_YGKtBJ",
+    "redline_happening_news_Xtz6X3",
+    "redline_image_banner_4qWkVQ"
   ]
 }
