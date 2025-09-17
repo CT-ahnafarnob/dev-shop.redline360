@@ -135,7 +135,12 @@
         loop 
         playsinline
         preload="metadata">
-        <source src="{{section.settings.video_url}}" type="video/mp4">
+        {% if section.settings.video_url != blank %}
+        <source src="{{ section.settings.video_url}}" type="video/mp4">
+        {% else %}
+            <source src="https://cdn.shopify.com/videos/c/o/v/c4c88746c57c4d97881d35f94d6c7295.mp4" type="video/mp4">
+        {% endif %}
+        
     </video>
     
     <div class="container">
