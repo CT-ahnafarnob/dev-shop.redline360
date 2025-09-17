@@ -1,6 +1,7 @@
 <style>
 .{{section.id}} {
-    background-image: url(https://cdn.shopify.com/s/files/1/0607/5393/6592/files/background-2.webp?v=1758073196);
+   
+    background-image: url('{% if section.settings.background_image != blank %}{{ section.settings.background_image | image_url }}{% else %}https://cdn.shopify.com/s/files/1/0607/5393/6592/files/background-2.webp?v=1758073196{% endif %}');
     position: relative;
     height: 65vh;
     min-height: 400px;
@@ -112,6 +113,11 @@
         "groups": ["header","footer"]
     },
     "settings": [
+            {
+                "type": "image_picker",
+                "id": "background_image",
+                "label": "Upload Background Image"
+            },
             {
                 "type": "text",
                 "id": "title",

@@ -1,67 +1,201 @@
-<div class="{{section.id}}">
-    <div class="video-container">
-        <a href="{{ section.settings.video_url }}" target="_blank" rel="noopener noreferrer">
-            <div class="play-button">&#9658;</div>
-        </a>
-    </div>
-    <div class="banner-text">
-        <h1>{{ section.settings.banner_text }}</h1>
-        <h2>{{ section.settings.banner_texth2 }}</h2>
-        <p>{{ section.settings.para_text }}</p>
-        <a href="{{ section.settings.button_link }}" class="btn">{{ section.settings.button_text }}</a>
-    </div>
+<style>
+.{{section.id}} {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+    text-align: center;
+}
 
-</div>
+.{{section.id}} .video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+}
+
+.{{section.id}}::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.{{section.id}} .largebtn {
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-family: var(--redline-font-family);
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.{{section.id}} .container {
+    position: relative;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.{{section.id}} .container h2 {
+    font-family: var(--redline-font-family);
+    font-size: 46px;
+    line-height: 56px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    color: #fff;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    max-width: 900px;
+    margin: 0 auto 2px auto;
+    padding: 0 20px;
+}
+.{{section.id}} .container h1 {
+    font-family: var(--redline-font-family);
+    font-size: 76px;
+    line-height: 56px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    color: #fff;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    max-width: 900px;
+    margin: 0 auto 2px auto;
+    padding: 0 20px;
+}
+.{{section.id}} .container p {
+    font-family: var(--redline-font-family);
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+    word-spacing: -1px;
+    max-width: 900px;
+    margin: 20px auto 24px auto;
+    padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .{{section.id}} {
+        height: 50vh;
+    }
+    
+    .{{section.id}} .container {
+        padding: 0 15px;
+    }
+    
+    .{{section.id}} .container h2 {
+        font-size: 22px;
+        line-height: 15px;
+        max-width: 100%;
+        margin-bottom: 0px;
+       
+    }
+    .{{section.id}} .container h1 {
+        font-size: 28px;
+        line-height: 30px;
+        max-width: 100%;
+        margin-bottom: 8px;
+    }
+    
+    .{{section.id}} .container p {
+        font-size: 12px;
+        line-height: 15px;
+        max-width: 100%;
+        letter-spacing: -1px;
+        word-spacing: 1px;
+        margin-bottom: 20px;
+    }
+    
+    .{{section.id}} .largebtn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}
+
+</style>
+
+<section class="{{section.id}}">
+    <video 
+        class="video-background" 
+        autoplay 
+        muted 
+        loop 
+        playsinline
+        preload="metadata">
+        <source src="{{section.settings.video_url}}" type="video/mp4">
+    </video>
+    
+    <div class="container">
+        <h2>{{section.settings.title}}</h2>
+        <h1>{{section.settings.title2}}</h1>
+        <div class="content">
+            <p>{{section.settings.content}}</p>
+        </div>
+        <a href="{{section.settings.url}}" class="btn largebtn">{{section.settings.btn_label}}</a>
+    </div>
+</section>
 
 {% schema %}
 {
-    "name": "Redline Video Banner",
+    "name": "Redline Video Hero Banner",
+    "disabled_on": {
+        "groups": ["header","footer"]
+    },
     "settings": [
-        {
-            "type": "image_picker",
-            "id": "background_image",
-            "label": "Background Image"
-        },
         {
             "type": "url",
             "id": "video_url",
-            "label": "Video URL"
+            "label": "Video URL",
+            "info": "Upload your video file to Shopify Files and paste the URL here"
         },
         {
             "type": "text",
-            "id": "banner_text",
-            "label": "First Banner Text",
-            "default": "Performance Parts"
+            "id": "title",
+            "label": "Title",
+            "default":"Performance Parts"
         },
         {
             "type": "text",
-            "id": "banner_texth2",
-            "label": "Second Banner Text",
-            "default": "High Performance"
+            "id": "title2",
+            "label": "Title",
+            "default":"High Performance"
         },
         {
-            "type": "text",
-            "id": "para_text",
-            "label": "Banner Paragraph Text",
-            "default": "High Performance"
+            "type": "textarea",
+            "id": "content",
+            "label": "Content",
+            "default":"Shipping from 7 Locations around the US. Visit our installation facility in Northern California"
         },
         {
             "type": "url",
-            "id": "button_link",
-            "label": "Button Link URL"
+            "id": "url",
+            "label": "Add Link"
         },
         {
             "type": "text",
-            "id": "button_text",
-            "label": "Button Text",
-            "default": "Shop Now"
+            "id": "btn_label",
+            "label": "Add Button Text",
+            "default": "Shop By Car"
         }
-        ],
-        "presets": [
-            {
-                "name": "Redline Video Banner",
-                "category": "Banner"
-            }
-        ]
+    ],
+    "presets": [
+        {
+            "name": "Redline Video Hero Banner",
+            "category": "Custom Sections"
+        }
+    ]
 }
 {% endschema %}
