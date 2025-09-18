@@ -85,12 +85,22 @@
         margin: 2px;
         max-width:100%;
     }
+     .{{section.id}} .product-slide{
+        padding: 5px;
+   }
+   .responsive img {
+        height: 150px;
+        object-fit: fill;
+        }
+   .responsive {
+        margin: 10px 30px;
+    }
     .slick-prev:before,
     .slick-next:before {
     font-size: 25px;
     color: #000000;
     position: relative;
-    top: -3rem;
+    top: -5rem;
 }
 }
 
@@ -156,7 +166,7 @@ $('.responsive').slick({
     {
       breakpoint: 480,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1
       }
     }
