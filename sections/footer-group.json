@@ -11,8 +11,30 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "redline_footer_list_xFzJAP": {
+      "type": "redline-footer-list",
+      "name": "Redline Footer List",
+      "settings": {
+        "footer_menu": "footer-menu-redline",
+        "ship_details": "With multiple distribution points around the USA, we can ship your order from the closest warehouse for lightning fast delivery."
+      }
+    },
+    "redline_footer_W4FmtJ": {
+      "type": "redline-footer",
+      "name": "Redline Footer",
+      "settings": {
+        "facebook_url": "",
+        "x_url": "",
+        "pinterest_url": "",
+        "instagram_url": "",
+        "tumblr_url": "",
+        "youtube_url": "",
+        "vimeo_url": ""
+      }
+    },
     "footer": {
       "type": "footer",
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
@@ -30,6 +52,8 @@
     }
   },
   "order": [
+    "redline_footer_list_xFzJAP",
+    "redline_footer_W4FmtJ",
     "footer"
   ]
 }

@@ -142,33 +142,13 @@
       "name": "Redline Part's Grid",
       "settings": {}
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "disabled": true,
+    "redline_slider_EUARiM": {
+      "type": "redline-slider",
+      "name": "Redline Slider",
       "settings": {
-        "collection": "all",
-        "products_to_show": 8,
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "heading": "Customer Favorites",
+        "content": "Browse our most popular performance car parts and truck accessories. From aftermarket headlights and tail lights to suspension upgrades like coilovers and lowering springs, these top picks deliver the performance and style you’re looking for. See what other gearheads are loving!",
+        "featured_collection": "sensitive"
       }
     },
     "redline_both_side_text_abNphC": {
@@ -385,13 +365,13 @@
     "image_banner",
     "redline_video_banner_EcQ9pp",
     "redline_parts_grid_xHADaE",
-    "featured_collection",
     "redline_both_side_text_abNphC",
+    "redline_slider_EUARiM",
     "redline_large_grid_DYAkUa",
+    "redline_slider_Fq6kEM",
     "redline_news_grid_gREHK4",
     "redline_image_banner_YGKtBJ",
     "redline_happening_news_Xtz6X3",
-    "redline_image_banner_4qWkVQ",
-    "redline_slider_Fq6kEM"
+    "redline_image_banner_4qWkVQ"
   ]
 }
