@@ -12,8 +12,10 @@
   <!-- jQuery CDN -->
     {{ 'slick.min.css' | asset_url | stylesheet_tag }}
    {{ 'slick-theme.min.css' | asset_url | stylesheet_tag }}
-   <script src="{{ 'redline-jquery.js' | asset_url }}" defer></script>
-   <script src="{{ 'slick.min.js' | asset_url }}" defer></script>
+   <script src="{{ 'redline-jquery.js' | asset_url }}" defer="defer"></script>
+   <script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
+
+
   
 
   {%- if settings.favicon != blank -%}
