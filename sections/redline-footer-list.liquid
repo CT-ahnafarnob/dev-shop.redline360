@@ -1,0 +1,162 @@
+<style>
+    .{{section.id}} {
+    background-color:#000000;
+    margin:auto;
+    width:100%;
+    box-sizing: border-box;
+}
+
+.{{section.id}} .links-inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 60px;
+}
+
+.{{section.id}} .links-inner li{
+    list-style: none;
+    padding:2px ;
+}
+.{{section.id}} .links-inner h3{
+    font-family: var(--redline-font-family);
+    font-size: 18px;
+    font-weight: 600;
+    color:#b4b7b9 ;
+    text-transform: uppercase; 
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal; 
+}
+.{{section.id}} .links-inner a {
+    font-family: var(--redline-font-family);
+    font-size: 16px;
+    color:#b4b7b9 ;
+    
+}
+
+.{{section.id}} .links-inner a:hover {
+    opacity: 0.8;
+}
+
+
+.{{section.id}} .links-inner p {
+    display: block;
+    color:#b4b7b9 ;
+    max-width: 300px;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}
+.fsimage {
+    float: right;
+    width: 90px;
+    height: 45px;
+}
+.ssl {
+    text-align: center;
+}
+.verified-icon {
+    width: 160px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+@media (max-width:768px) {
+    .{{section.id}} .links-inner {
+    flex-direction: column;
+    gap: 10px;
+}
+.{{section.id}} .links-inner h3{
+    font-size: 18px;
+}
+.{{section.id}} .links-inner a {
+    font-size: 12px;
+}
+.{{section.id}} .links-inner li{
+    padding:0 ;
+}
+.{{section.id}} .links-inner p {
+    display: block;
+    color:#b4b7b9 ;
+    max-width: 300px;
+
+}
+.ssl {
+    text-align: left;
+    margin-left: 0rem;;
+
+}
+}
+
+</style>
+
+<section class="{{section.id}}">
+    <div class="links-inner">
+                {% comment %} Shop {% endcomment %}
+            <ul>
+                <li><h3>{{section.settings.footer_menu.links[0].title}}</h3></li>
+                {% for sub-menu in section.settings.footer_menu.links[0].links %}
+                    <li><a href="{{ sub-menu.url }}">{{ sub-menu.title }}</a></li>
+                {% endfor %}
+            </ul>
+        
+            {% comment %} For Our Customer  {% endcomment %}
+             <ul>
+                <li><h3>{{section.settings.footer_menu.links[1].title}}</h3></li>
+                {% for sub-menu in section.settings.footer_menu.links[1].links %}
+                    <li><a href="{{ sub-menu.url }}">{{ sub-menu.title }}</a></li>
+                {% endfor %}
+            </ul>
+                {% comment %} FAST SHIPPING {% endcomment %}
+            <ul > 
+                <li ><h3>{{section.settings.footer_menu.links[2].title}}</h3></li>
+                <div >
+                    <img class="fsimage" src="{{ 'fast-shipping.png' | asset_url }}" width="120" height="50" alt="SHIPPING ICON">
+                    <p>{{section.settings.ship_details}}</p>
+                    
+                </div>
+                    
+            
+            </ul>
+            <ul>
+                <li><h3>SAFE & SECURE SHOPPING</h3></li>
+                    <div class="ssl">
+                    <img src="{{ 'ssl-secure-80x.png' | asset_url }}" width="90" height="90" alt="SSL">
+                    <img src="{{ 'privacy-guarantee-80x.png' | asset_url }}" width="90" height="90" alt="SSL">
+                    <div class="verified-icon">{% render 'verified-reviews.liquid' | strip  %}</div>
+                    </div>
+            </ul>
+            
+    </div>
+</section>
+
+
+
+{% schema %}
+{
+    "name": "Redline Footer List",
+    "enabled_on": {
+        "groups": ["footer"]
+    },
+    "settings": [
+            {
+                "type": "link_list",
+                "id": "footer_menu",
+                "label": "Footer Menu"
+            },
+            {
+                "type": "text",
+                "id": "ship_details",
+                "label": "Add Paragrapgh",
+                "default": "With multiple distribution points around the USA, we can ship your order from the closest warehouse for lightning fast delivery."
+            }
+           
+        ],
+        "presets": [
+            {
+                "name": "Redline Footer List",
+                "category": "Custom Footer"
+            }
+        ]
+}
+{% endschema %}

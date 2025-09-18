@@ -5,6 +5,7 @@
     overflow: hidden;
     z-index: 0;
     text-align: center;
+    margin:auto;
 }
 
 .{{section.id}} .video-background {
@@ -18,6 +19,7 @@
     z-index: -1;
     transform: translateX(-50%) translateY(-50%);
     object-fit: cover;
+    margin:auto;
 }
 
 .{{section.id}}::before {
@@ -85,6 +87,9 @@
     max-width: 900px;
     margin: 20px auto 24px auto;
     padding: 0 20px;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
 }
 
 @media (max-width: 768px) {

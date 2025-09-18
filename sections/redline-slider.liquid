@@ -5,9 +5,10 @@
         text-align: center;
         overflow: hidden;
         max-width: 1920px;
-        margin:0;
-        padding:0;
-        
+        margin:auto;
+        word-wrap: break-word;
+        word-break: break-word;
+        white-space: normal;
     }
     
     .{{section.id}} .heading{
@@ -32,7 +33,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        width: 70%;
+        max-width: 600px;
     
     }
     .{{section.id}} .heading p {
@@ -43,6 +44,7 @@
         font-weight: 600;
         margin-top: 0;
         margin-left: 30px;
+        max-width: 75%;
     }
     .responsive {
         margin: 10px 100px;
@@ -169,6 +171,9 @@ $('.responsive').slick({
 {% schema %}
 {
     "name": "Redline Slider",
+    "disabled_on": {
+        "groups": ["header", "footer"]
+    },
     "settings": [
             {
             "type": "text",
@@ -192,7 +197,7 @@ $('.responsive').slick({
         "presets": [
                 {
                      "name": "Redline Slider",
-                     "category": "Custom Section"
+                     "category": "Custom Slider"
                 }
         ]
 }
