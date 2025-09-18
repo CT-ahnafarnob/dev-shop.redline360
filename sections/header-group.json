@@ -17,7 +17,7 @@
       "settings": {
         "announcement_text": "Click here: Current Sales and Promotions",
         "background_color": "#000000",
-        "text_color": "#FFFFFF",
+        "text_color": "#ffffff",
         "link_url": ""
       }
     },
@@ -52,8 +52,8 @@
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
         "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "always",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
