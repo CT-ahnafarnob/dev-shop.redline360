@@ -48,6 +48,7 @@
     },
     "header": {
       "type": "header",
+      "disabled": true,
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
@@ -64,11 +65,19 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "redline_header_Dpzg8D": {
+      "type": "redline-header",
+      "name": "Redline Header",
+      "settings": {
+        "header_menu": "main-menu"
+      }
     }
   },
   "order": [
     "redline_announcement_bar_kY3kJJ",
     "announcement-bar",
-    "header"
+    "header",
+    "redline_header_Dpzg8D"
   ]
 }
