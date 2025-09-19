@@ -1,25 +1,263 @@
 <style> 
+    .{{section.id}} {
+        padding:20px;
+        margin:auto;
+        position: fixed;
+        top: 42px;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+    }
     .{{section.id}} .menu-icon{
         display: flex;
         list-style: none;
-        gap: 10px;
+        gap: 20px;
     }
-     .{{section.id}} .upper-container{
+     .{{section.id}} .logo{
+        padding-top: 5px;
+    }
+    .{{section.id}} .upper-container > div:last-child {
+        margin-left: -4rem; 
+    }
+    .{{section.id}} .upper-container{
         display: flex;
         justify-content: center;
         gap: 30px;
         align-items: center;
-     }
+        text-align: center;
+        max-width: 1900px;
+        margin: 0 auto;
+        background-color: #fff;
+       
+    }
+    .{{section.id}} .search-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
     .{{section.id}} .upper-container input{
         background: #fff;
         box-sizing: border-box;
         border: 1px solid #E8E8E8;
-        border-radius: 4px;
+        border-radius: 4px 0 0 4px;
         box-shadow: 0 1px 4px #00000040;
-        min-height: 52px;
-        width: 100rem;
+        min-height: 47px;
+        width: 80rem; 
         padding: 10px;
-        }
+        border-right: none;
+        
+    }
+    .{{section.id}} .upper-container .voice{ 
+        position: absolute;
+        right: 60px;  
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        z-index: 2;
+    }
+    .{{section.id}} .search {
+        background: #db4540;
+        color: #fff;
+        border: none;
+        padding: 0 20px;
+        border-radius: 0 4px 4px 0;
+        min-height: 54px;
+        cursor: pointer;
+    }
+    .{{section.id}} .lower-part {
+        margin: auto;
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 10rem;
+    }
+    .{{section.id}} .carButton {
+        display: flex;
+        gap: 8px;
+        padding: 7px 24px;
+        background: #cf3130;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        max-width: 220px;
+        margin:20px;
+    }
+
+    .{{section.id}} .carButton:hover {
+        background: #a83530;
+    }
+
+    .{{section.id}} .carButton svg {
+        width: 40px;
+        height: 16px;
+        fill: white;
+    }
+
+    .{{section.id}} .carButton span {
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    /* Menu */
+    .{{section.id}} .menu-section {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+    }
+    .{{section.id}} .menu-section li:hover{
+        text-decoration: underline;
+    }
+    .{{section.id}} .menu-content {
+        position: absolute;
+        top: 95%; 
+        left: 30%;
+        transform: translateX(-50%);
+        background-color: #fff; 
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 2; 
+        width: 50%;
+  
+    }
+
+    .{{section.id}} .menu-content a{
+        text-decoration: none;
+        text-transform: none;
+    }
+    .{{section.id}} .menu-section h3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-bottom: 1px solid #eee;
+        font-family: var(--redline-font-family);
+        font-size: 16px;
+        font-weight: 600;
+        color:#000000 ;
+    }
+    
+    .{{section.id}} .toggle-icon {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .{{section.id}} .mobile-menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 5px;
+    }   
+
+    /* Mobile */
+    @media (max-width: 768px) {
+    .{{section.id}} {
+        padding: 10px;
+    }
+    .{{section.id}} .upper-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 15px;
+    }
+    .{{section.id}} .upper-container > div:last-child {
+        margin-left: 0; 
+    }
+    .{{section.id}} .logo {
+        order: 1;
+        flex: 1;
+        text-align: left;
+        margin-left: auto; 
+    }
+    .{{section.id}} .menu-icon {
+        order: 2;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        flex: 0 0 auto;
+    }
+    .{{section.id}} .mobile-menu-toggle {
+        order: 3;
+        flex: 0 0 auto;
+        display: flex;
+    }
+
+    /* Second row: Search takes full width */
+    .{{section.id}} .search-wrapper {
+        order: 4;
+        width: 100%;
+        flex-basis: 100%;
+       
+    }
+    
+    .{{section.id}} .upper-container input {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .{{section.id}} .lower-part {
+        display: none;
+    }
+
+    .{{section.id}} .lower-part.mobile-visible {
+        display: flex;
+        flex-direction: column;
+        padding-left: 0;
+        align-items: center;
+        text-align: left;
+    }
+    
+    .{{section.id}} .carButton {
+        margin: 10px 0;
+        max-width: none;
+        width: 90%;
+    }
+    
+    .{{section.id}} .menu-section {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .{{section.id}} .menu-content {
+        position: static;
+        transform: none;
+        left: auto;
+        width: 100%;
+        box-shadow: none;
+        border: 1px solid #eee;
+        margin-top: 5px;
+    }
+
+  
+    
+    .{{section.id}} .mobile-menu-toggle span {
+        width: 20px;
+        height: 3px;
+        background-color: #333;
+        margin: 2px 0;
+
+    }
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .{{section.id}} .upper-container input {
+        width: 50rem;
+    }
+    
+    .{{section.id}} .lower-part {
+        padding-left: 2rem;
+    }
+}
 </style>
 
 <section class="{{section.id}}">
@@ -27,36 +265,164 @@
         
     <div class="logo">
         {% if section.settings.logo_image !=blank %}
-            <img src="{{section.settings.logo_image |  image_tag }}" width="200" height="50" alt="logo">
+            <img src="{{section.settings.logo_image |  image_url: width: 200, height: 50  }}" width="200" height="50" alt="logo">
             {% else %}
                 <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/Redline_dark_gray_360x_ed741c52-e06a-403e-88c4-03eb57899799.avif?v=1758179679" width="200" height="50" alt="fallback logo">
         {% endif %}
     </div>
     
-    <div>
-        <input type="search" placeholder="Search by car, product, brand, part number...">
-
+    <div class="search-wrapper">
+        <input type="text"  placeholder="Search by car, product, brand, part number...">
+        <button class="voice"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="snize-voice-search-trigger-default-icon" role="presentation"><g><path d="M12 15C13.66 15 14.99 13.66 14.99 12L15 6C15 4.34 13.66 3 12 3C10.34 3 8.99998 4.34 8.99998 6V12C8.99998 13.66 10.34 15 12 15ZM18.08 12C17.66 12 17.31 12.3 17.25 12.71C16.88 15.32 14.53 17.1 12 17.1C9.46998 17.1 7.11998 15.33 6.74998 12.71C6.68998 12.3 6.32998 12 5.91998 12C5.39998 12 4.99998 12.46 5.06998 12.97C5.52998 15.94 8.02998 18.27 11 18.72V21C11 21.55 11.45 22 12 22C12.55 22 13 21.55 13 21V18.72C15.96 18.29 18.47 15.94 18.93 12.97C19 12.46 18.6 12 18.08 12V12Z" fill="#333333" style="fill: #333333!important;"></path></g></svg></button>
+        <button class="search"><svg aria-hidden="true" focusable="false" role="presentation" width="22" height="22" class="icon icon-search" viewBox="0 0 37 40"><path fill="#ffffff" d="M35.6 36l-9.8-9.8c4.1-5.4 3.6-13.2-1.3-18.1-5.4-5.4-14.2-5.4-19.7 0-5.4 5.4-5.4 14.2 0 19.7 2.6 2.6 6.1 4.1 9.8 4.1 3 0 5.9-1 8.3-2.8l9.8 9.8c.4.4.9.6 1.4.6s1-.2 1.4-.6c.9-.9.9-2.1.1-2.9zm-20.9-8.2c-2.6 0-5.1-1-7-2.9-3.9-3.9-3.9-10.1 0-14C9.6 9 12.2 8 14.7 8s5.1 1 7 2.9c3.9 3.9 3.9 10.1 0 14-1.9 1.9-4.4 2.9-7 2.9z"></path></svg></button>
+ 
     </div>
     
     <div class="">
         <ul class="menu-icon">
             <li>
-            <a href="#">{% render 'icon-login.liquid' | strip %}</a>
+            <a href="#">{% render "icon-login" | strip %}</a>
         </li>
         <li>
-            <a href="#">{% render 'icon-cart.liquid' | strip %}</a>
+            <a href="#">{% render "icon-cart" | strip %}</a>
         </li>
         </ul>
         
     </div>
-    
-    
-    
-    
-    </div>
-    
-</section>
 
+     <!-- Mobile menu toggle -->
+    <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>  
+</div>
+  
+    <div class="lower-part">
+<div class="carButton">
+    <svg xmlns="http://www.w3.org/2000/svg" width="43" height="16" viewBox="0 0 43 16" fill="#00000">
+        <path d="M8.23255 13.1227C8.39372 13.1227 8.55497 13.0614 8.67792 12.939L9.62997 11.9911C9.87596 11.7462 9.87596 11.3492 9.62997 11.1043C9.38398 10.8594 8.98514 10.8594 8.73923 11.1043L7.78718 12.0522C7.54119 12.2971 7.54119 12.6941 7.78718 12.939C7.91022 13.0614 8.07139 13.1227 8.23255 13.1227Z" fill="white"></path>
+        <path d="M34.9952 12.939C35.1182 13.0614 35.2794 13.1226 35.4406 13.1226C35.6017 13.1226 35.763 13.0614 35.886 12.939C36.1319 12.694 36.1319 12.297 35.886 12.0521L34.9339 11.1042C34.6879 10.8593 34.2891 10.8593 34.0432 11.1042C33.7972 11.3491 33.7972 11.7462 34.0432 11.991L34.9952 12.939Z" fill="white"></path>
+        <path d="M41.1004 6.51049C37.5429 4.86562 32.1916 4.70826 31.111 4.69346L26.008 1.46033C24.5 0.504949 22.7584 0 20.9711 0H14.973C13.4202 0 11.8652 0.36548 10.4763 1.05689L7.28126 2.64732C6.31872 3.12652 5.28916 3.43681 4.22121 3.56976L1.73125 3.87964C0.744268 4.00238 0 4.84179 0 5.83204V9.83459C0 11.0061 0.790208 12.0491 1.92164 12.371L4.89729 13.2174C5.40842 14.8286 6.92349 16 8.70858 16C10.1933 16 11.4906 15.189 12.1795 13.9892H31.4936C32.1825 15.189 33.4797 16 34.9645 16C37.1679 16 38.9605 14.2152 38.9605 12.0215C38.9605 9.82782 37.1679 8.04306 34.9645 8.04306C32.7611 8.04306 30.9684 9.82773 30.9684 12.0215C30.9684 12.2652 30.9917 12.5033 31.034 12.7349H12.639C12.6813 12.5032 12.7045 12.2651 12.7045 12.0215C12.7045 9.82782 10.9119 8.04306 8.70849 8.04306C6.559 8.04306 4.80129 9.74178 4.71655 11.8615L2.26766 11.1649C1.67431 10.9962 1.25976 10.4492 1.25976 9.83459V7.95685H1.97632C2.32418 7.95685 2.6062 7.67608 2.6062 7.32974C2.6062 6.98341 2.32418 6.70263 1.97632 6.70263H1.25976V5.83204C1.25976 5.473 1.5296 5.16864 1.88746 5.12416L4.37743 4.81428C5.58747 4.66369 6.75393 4.31201 7.84463 3.7691L8.13194 3.62612L9.29705 4.78075C10.0518 5.5322 11.0553 5.94609 12.1227 5.94609H13.4213C13.7691 5.94609 14.0511 5.66531 14.0511 5.31898C14.0511 4.97265 13.7691 4.69187 13.4213 4.69187H12.1227C12.0126 4.69187 11.9038 4.68468 11.7961 4.67197L12.4921 1.61134C13.2968 1.37621 14.1353 1.25414 14.9731 1.25414H18.1773V4.69179H16.1143C15.7664 4.69179 15.4844 4.97256 15.4844 5.3189C15.4844 5.66523 15.7664 5.94601 16.1143 5.94601H30.9252C30.9849 5.94601 36.9356 5.96758 40.5699 7.6479C40.7832 7.74648 40.9731 7.88152 41.1355 8.04306H40.3505C40.0026 8.04306 39.7206 8.32384 39.7206 8.67017C39.7206 9.01651 40.0026 9.29728 40.3505 9.29728H41.7288C41.7356 9.36518 41.7402 9.43341 41.7402 9.50264V11.7278C41.7402 12.3491 41.4656 12.7349 41.0237 12.7349C40.6758 12.7349 40.3938 13.0157 40.3938 13.362C40.3938 13.7084 40.6758 13.9892 41.0237 13.9892C41.5815 13.9892 42.0884 13.7606 42.451 13.3457C42.8101 12.9345 43 12.3751 43 11.7278V9.50264C42.9999 8.21849 42.2543 7.04395 41.1004 6.51049ZM34.9645 9.29736C36.4733 9.29736 37.7008 10.5195 37.7008 12.0216C37.7008 13.5238 36.4733 14.7459 34.9645 14.7459C33.4557 14.7459 32.2282 13.5238 32.2282 12.0216C32.2282 10.5195 33.4557 9.29736 34.9645 9.29736ZM8.70858 9.29736C10.2174 9.29736 11.4449 10.5195 11.4449 12.0216C11.4449 13.5238 10.2174 14.7459 8.70858 14.7459C7.1998 14.7459 5.97229 13.5238 5.97229 12.0216C5.97229 10.5195 7.19988 9.29736 8.70858 9.29736ZM10.6038 4.23458C10.4559 4.13592 10.3165 4.02212 10.1878 3.89394L9.32317 3.03312L11.0396 2.17866C11.0514 2.17281 11.0634 2.16738 11.0752 2.16161L10.6038 4.23458ZM19.437 1.25414H20.9711C22.5184 1.25414 24.0262 1.69136 25.3317 2.51839L28.7622 4.69187H19.437V1.25414Z" fill="white"></path>
+        <path d="M14.7677 10.0539C14.4198 10.0539 14.1378 10.3347 14.1378 10.681C14.1378 11.0274 14.4198 11.3081 14.7677 11.3081H28.9054C29.2533 11.3081 29.5353 11.0274 29.5353 10.681C29.5353 10.3347 29.2533 10.0539 28.9054 10.0539H14.7677Z" fill="white"></path>
+    </svg>
+    <span>Shop by Car</span>
+</div>
+<!-- Main Navigation -->
+            {% if section.settings.header_menu != blank %}
+    
+                {% comment %} Menu {% endcomment %}
+                 <ul class="menu-section">
+                {% for menu in section.settings.header_menu.links %}
+                    <li>
+                        <h3 onclick="toggleMenu(this)">
+                            {{ menu.title }} 
+                            
+                            {% if menu.links != blank %}
+                                <span class="toggle-icon">&#x1F893</span>
+                            {% endif %}
+                        </h3>
+                    </li>
+                    
+                    {% if menu.links != blank %}
+                        <div class="menu-content" style="display: none;">
+                            {% for sub-menu in menu.links %}
+                                <li><a href="{{ sub-menu.url }}">{{ sub-menu.title }}</a></li>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+            {% else %}
+                <!-- Default Navigation -->
+                <ul class="main-nav">
+                    <li><a href="#">Shop By Category</a></li>
+                    <li><a href="#">Shop By Brand</a></li>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Installation</a></li>
+                </ul>
+            {% endif %}
+    </div>
+   
+</section>
+<script>
+function toggleMenu(header) {
+    const content = header.parentElement.nextElementSibling;
+    const icon = header.querySelector('.toggle-icon');
+    if (!content || !content.classList.contains('menu-content')) {
+        return; // Exit early if no submenu exists
+    }
+               // Close all other open menus first
+    const allMenus = document.querySelectorAll('.{{section.id}} .menu-content');
+    const allIcons = document.querySelectorAll('.{{section.id}} .toggle-icon');
+    
+    allMenus.forEach((menu, index) => {
+        if (menu !== content && menu.style.display === 'block') {
+            menu.style.display = 'none';
+            if (allIcons[index]) {
+                allIcons[index].textContent = '\u{1F893}'; 
+            }
+        }
+    });
+
+
+    if (content.style.display === 'none' || !content.style.display) {
+        content.style.display = 'block';
+        content.style.textAlign = 'left';
+        icon.textContent = '\u{1F891}';
+    } else {
+        content.style.display = 'none';
+        icon.textContent = '\u{1F893}';
+    }
+}
+
+let lastScrollY = 0;
+let scrollTimeout;
+
+window.addEventListener('scroll', function() {
+    
+    const lowerPart = document.querySelector('.{{section.id}} .lower-part');
+    
+    if (!lowerPart) return;
+    
+    const scrollPosition = window.scrollY;
+    const scrollDirection = scrollPosition > lastScrollY ? 'down' : 'up';
+    
+    
+    clearTimeout(scrollTimeout);
+    
+  scrollTimeout = setTimeout(() => {
+        if (scrollPosition > 50) {
+            lowerPart.style.transition = 'all 0.5s ease';
+            lowerPart.style.maxHeight = '0';
+            lowerPart.style.opacity = '0';
+            lowerPart.style.paddingTop = '0';
+            lowerPart.style.paddingBottom = '0';
+        } else {
+            lowerPart.style.transition = 'all 0.3s ease';
+            lowerPart.style.maxHeight = '100px'; 
+            lowerPart.style.opacity = '1';
+            lowerPart.style.paddingTop = '';
+            lowerPart.style.paddingBottom = '';
+        }
+    }, 10); 
+    
+    lastScrollY = scrollPosition;
+});
+
+// Ensure proper initial state
+document.addEventListener('DOMContentLoaded', function() {
+    const lowerPart = document.querySelector('.{{section.id}} .lower-part');
+    if (lowerPart) {
+        lowerPart.classList.add('visible');
+    }
+});
+function toggleMobileMenu() {
+    const lowerPart = document.querySelector('.{{section.id}} .lower-part');
+    lowerPart.classList.toggle('mobile-visible');
+}
+</script>
 {% schema %}
 {
     "name": "Redline Header",
