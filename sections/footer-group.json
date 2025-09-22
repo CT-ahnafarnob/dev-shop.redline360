@@ -16,11 +16,100 @@
       "name": "Redline Footer List",
       "settings": {
         "footer_menu": "footer-menu-redline",
-        "ship_details": "With multiple distribution points around the USA, we can ship your order from the closest warehouse for lightning fast delivery."
+        "ship_details": "<p>With multiple distribution points around the USA, we can ship your order from the closest warehouse for lightning fast delivery.</p>",
+        "menu1_title": "",
+        "menu2_title": "",
+        "menu3_title": "",
+        "menu4_title": "",
+        "heading_level": "h2"
       }
     },
     "redline_footer_W4FmtJ": {
       "type": "redline-footer",
+      "blocks": {
+        "payment_icon_fEeX9k": {
+          "type": "payment_icon",
+          "name": "American Express",
+          "settings": {
+            "payment_type": "american_express"
+          }
+        },
+        "payment_icon_npWPeG": {
+          "type": "payment_icon",
+          "name": "Apple Pay",
+          "settings": {
+            "payment_type": "apple_pay"
+          }
+        },
+        "payment_icon_GdCXky": {
+          "type": "payment_icon",
+          "name": "Diners Club",
+          "settings": {
+            "payment_type": "diners_club"
+          }
+        },
+        "payment_icon_LCQQCL": {
+          "type": "payment_icon",
+          "name": "Discover",
+          "settings": {
+            "payment_type": "discover"
+          }
+        },
+        "payment_icon_aMRLF9": {
+          "type": "payment_icon",
+          "name": "Google Pay",
+          "settings": {
+            "payment_type": "google_pay"
+          }
+        },
+        "payment_icon_kLFzcM": {
+          "type": "payment_icon",
+          "name": "Mastercard",
+          "settings": {
+            "payment_type": "mastercard"
+          }
+        },
+        "payment_icon_BncCw4": {
+          "type": "payment_icon",
+          "name": "Paypal",
+          "settings": {
+            "payment_type": "paypal"
+          }
+        },
+        "payment_icon_9CKane": {
+          "type": "payment_icon",
+          "name": "Shop Pay",
+          "settings": {
+            "payment_type": "shopify_pay"
+          }
+        },
+        "payment_icon_qNCi7g": {
+          "type": "payment_icon",
+          "name": "Venmo",
+          "settings": {
+            "payment_type": "venmo"
+          }
+        },
+        "payment_icon_XTxxNR": {
+          "type": "payment_icon",
+          "name": "Visa",
+          "settings": {
+            "payment_type": "visa"
+          }
+        }
+      },
+      "block_order": [
+        "payment_icon_fEeX9k",
+        "payment_icon_npWPeG",
+        "payment_icon_GdCXky",
+        "payment_icon_LCQQCL",
+        "payment_icon_aMRLF9",
+        "payment_icon_kLFzcM",
+        "payment_icon_BncCw4",
+        "payment_icon_9CKane",
+        "payment_icon_qNCi7g",
+        "payment_icon_XTxxNR"
+      ],
       "name": "Redline Footer",
       "settings": {
         "facebook_url": "",
@@ -29,7 +118,17 @@
         "instagram_url": "",
         "tumblr_url": "",
         "youtube_url": "",
-        "vimeo_url": ""
+        "vimeo_url": "",
+        "email_signup": true,
+        "title": "Sign up and Save",
+        "description": "Enter your email to receive an instant coupon code:",
+        "placeholder_text": "Enter your Email",
+        "button_text": "Subscribe",
+        "title_font_size": 22,
+        "description_font_size": 16,
+        "button_font_size": 18,
+        "social_icon": true,
+        "payment_icon": true
       }
     },
     "footer": {
