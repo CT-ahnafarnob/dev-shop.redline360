@@ -7,6 +7,7 @@
         left: 0;
         width: 100%;
         background: #ffffff;
+        padding-bottom: 0;
     }
     .{{section.id}} .menu-icon{
         display: flex;
@@ -72,6 +73,7 @@
         display: flex;
         justify-content: flex-start;
         padding-left: 10rem;
+        padding-bottom: 0;
     }
     .{{section.id}} .carButton {
         display: flex;
@@ -160,33 +162,29 @@
     /* Mobile */
     @media (max-width: 768px) {
     .{{section.id}} {
-        padding: 10px;
+        padding: 5px;
+        gap:0;
     }
     .{{section.id}} .upper-container {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        gap: 15px;
+        row-gap: 0px;
     }
     .{{section.id}} .upper-container > div:last-child {
-        margin-left: 0; 
+        margin-left: 0;
+        margin-bottom: 6px; 
     }
     .{{section.id}} .logo {
-        order: 1;
-        flex: 1;
         text-align: left;
-        margin-left: auto; 
+    
     }
     .{{section.id}} .menu-icon {
-        order: 3;
         justify-content: center;
         margin: 0;
         padding: 0;
-        flex: 0 0 auto;
     }
     .{{section.id}} .mobile-menu-toggle {
-        order: 2;
-        flex: 0 0 auto;
         display: flex;
     }
 
@@ -210,11 +208,12 @@
     .{{section.id}} .lower-part.mobile-visible {
         display: flex;
         flex-direction: column;
-        padding-left: 0;
+        padding:0;
+        margin: 0;
         align-items: center;
         text-align: left;
-    }
-    
+        box-sizing: border-box;
+}
     .{{section.id}} .carButton {
         margin: 10px 0;
         max-width: none;
@@ -223,8 +222,13 @@
     
     .{{section.id}} .menu-section,.main-nav {
         flex-direction: column;
-        gap: 10px;
-        width: 100%;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+        margin: -9px;
+        padding: 0px;
+        gap: 0;
+
     }
     
     .{{section.id}} .menu-content {
@@ -235,8 +239,8 @@
         box-shadow: none;
         border: 1px solid #eee;
         margin-top: 5px;
-    }
 
+    }
   
     
     .{{section.id}} .mobile-menu-toggle span {
@@ -246,7 +250,7 @@
         margin: 2px 0;
 
     }
-}
+    }
 
 /* Tablet Styles */
 @media (max-width: 1024px) and (min-width: 769px) {
@@ -380,36 +384,29 @@ function toggleMenu(header) {
 let lastScrollY = 0;
 let scrollTimeout;
 
-window.addEventListener('scroll', function() {
-    
-    const lowerPart = document.querySelector('.{{section.id}} .lower-part');
-    
-    if (!lowerPart) return;
-    
-    const scrollPosition = window.scrollY;
-    const scrollDirection = scrollPosition > lastScrollY ? 'down' : 'up';
-    
-    
-    clearTimeout(scrollTimeout);
-    
-  scrollTimeout = setTimeout(() => {
-        if (scrollPosition > 50) {
-            lowerPart.style.transition = 'all 0.5s ease';
-            lowerPart.style.maxHeight = '0';
-            lowerPart.style.opacity = '0';
-            lowerPart.style.paddingTop = '0';
-            lowerPart.style.paddingBottom = '0';
-        } else {
-            lowerPart.style.transition = 'all 0.3s ease';
-            lowerPart.style.maxHeight = '100px'; 
-            lowerPart.style.opacity = '1';
-            lowerPart.style.paddingTop = '';
-            lowerPart.style.paddingBottom = '';
-        }
-    }, 10); 
-    
-    lastScrollY = scrollPosition;
-});
+ window.addEventListener('scroll', function() {
+        if (window.innerWidth <= 768) return; // Ignore mobile
+        const lowerPart = document.querySelector('.{{section.id}} .lower-part');
+        if (!lowerPart) return;
+        const scrollPosition = window.scrollY;
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            if (scrollPosition > 50) {
+                lowerPart.style.transition = 'all 0.5s ease';
+                lowerPart.style.maxHeight = '0';
+                lowerPart.style.opacity = '0';
+                lowerPart.style.paddingTop = '0';
+                lowerPart.style.paddingBottom = '0';
+            } else {
+                lowerPart.style.transition = 'all 0.3s ease';
+                lowerPart.style.maxHeight = '100px'; 
+                lowerPart.style.opacity = '1';
+                lowerPart.style.paddingTop = '';
+                lowerPart.style.paddingBottom = '';
+            }
+        }, 10); 
+        lastScrollY = scrollPosition;
+    });
 
 // Ensure proper initial state
 document.addEventListener('DOMContentLoaded', function() {
