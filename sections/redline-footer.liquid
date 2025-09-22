@@ -73,16 +73,18 @@
   display: flex;
   gap: 10px; 
   list-style: none;
+  align-items: center;
   
 
 }
 .img{
-    width: 60px;
+    width: 40px;
 }
 .image a {
   color: aliceblue;
   text-decoration: none;
   transition: opacity 0.3s ease;
+  text-align: center;
 }
 
 .image a:hover {
@@ -174,22 +176,58 @@
         {% if section.settings.social_icon %}
          <ul class="image">
             <li class="img">
-                <a href="{{ section.settings.facebook_url }}">{% render 'icon-facebook.liquid' | strip %}</a>
+                {% if section.settings.facebook_icon !=blank %}
+                     <a href="{{ section.settings.facebook_url }}">
+                        <img src="{{section.settings.facebook_icon |  image_url}}" width="0"  height="auto" alt="facebook_icon">
+                        </a>
+                    {% else %}
+                    <a href="{{ section.settings.facebook_url }}">{% render 'icon-facebook.liquid' | strip %}</a>
+                {% endif %}
             </li>
             <li class="img">
-                <a href="{{ section.settings.x_url }}">{% render 'icon-x.liquid' | strip %}</a>
+                {% if section.settings.x_icon !=blank %}
+                     <a href="{{ section.settings.x_url }}">
+                        <img src="{{section.settings.x_icon |  image_url}}" width="40"  height="auto" alt="x_icon">
+                        </a>
+                    {% else %}
+                    <a href="{{ section.settings.x_url }}">{% render 'icon-x.liquid' | strip %}</a>
+                {% endif %}
             </li>
             <li class="img">
-                <a href="{{ section.settings.pinterest_url }}">{% render 'icon-pinterest.liquid' | strip %}</a>
+                 {% if section.settings.pinterest_icon !=blank %}
+                     <a href="{{ section.settings.pinterest_url }}">
+                        <img src="{{section.settings.pinterest_icon |  image_url}}" width="40"  height="auto" alt="pinterest_icon">
+                        </a>
+                    {% else %}
+                            <a href="{{ section.settings.pinterest_url }}">{% render 'icon-pinterest.liquid' | strip %}</a>
+                {% endif %}
             </li>
             <li class="img">
-                <a href="{{ section.settings.tumblr_url }}">{% render 'icon-tumblr.liquid' | strip %}</a>
+                {% if section.settings.tumblr_icon !=blank %}
+                     <a href="{{ section.settings.tumblr_url }}">
+                        <img src="{{section.settings.tumblr_icon |  image_url}}" width="40"  height="auto" alt="tumblr_icon">
+                        </a>
+                    {% else %}
+                        <a href="{{ section.settings.tumblr_url }}">{% render 'icon-tumblr.liquid' | strip %}</a>
+                {% endif %}
             </li>
             <li class="img">
-                <a href="{{ section.settings.youtube_url }}">{% render 'icon-youtube.liquid' | strip %}</a>
+                {% if section.settings.youtube_icon !=blank %}
+                     <a href="{{ section.settings.youtube_url }}">
+                        <img src="{{section.settings.youtube_icon |  image_url}}" width="40"  height="auto" alt="youtube_icon">
+                        </a>
+                    {% else %}
+                        <a href="{{ section.settings.youtube_url }}">{% render 'icon-youtube.liquid' | strip %}</a>
+                {% endif %}
             </li>
             <li class="img">
-                <a href="{{ section.settings.vimeo_url }}">{% render 'icon-vimeo.liquid' | strip %}</a>
+                {% if section.settings.vimeo_icon !=blank %}
+                     <a href="{{ section.settings.vimeo_url }}">
+                        <img src="{{section.settings.vimeo_icon |  image_url}}" width="40"  height="auto" alt="vimeo_icon">
+                        </a>
+                    {% else %}
+                        <a href="{{ section.settings.vimeo_url }}">{% render 'icon-vimeo.liquid' | strip %}</a>
+                {% endif %}
             </li>
             
         </ul>
@@ -267,9 +305,19 @@
             "label": "Facebook URL"
         },
         {
+            "type": "image_picker",
+            "id": "facebook_icon",
+            "label": "Change Facebook Icon"
+        },
+        {
             "type": "url",
             "id": "x_url",
             "label": "X URL"
+        },
+         {
+            "type": "image_picker",
+            "id": "x_icon",
+            "label": "Change X Icon"
         },
         {
             "type": "url",
@@ -277,9 +325,9 @@
             "label": "Pinterest URL"
         },
         {
-            "type": "url",
-            "id": "instagram_url",
-            "label": "Instagram URL"
+            "type": "image_picker",
+            "id": "pinterest_icon",
+            "label": "Change Pinterest Icon"
         },
         {
             "type": "url",
@@ -287,14 +335,29 @@
             "label": "Tumblr URL"
         },
         {
+            "type": "image_picker",
+            "id": "tumblr_icon",
+            "label": "Change Tumblr Icon"
+        },
+        {
             "type": "url",
             "id": "youtube_url",
             "label": "YouTube URL"
         },
         {
+            "type": "image_picker",
+            "id": "youtube_icon",
+            "label": "Change YouTube Icon"
+        },
+        {
             "type": "url",
             "id": "vimeo_url",
             "label": "Vimeo URL"
+        },
+        {
+            "type": "image_picker",
+            "id": "vimeo_icon",
+            "label": "Change Vimeo Icon"
         },
         {
             "type": "checkbox",
