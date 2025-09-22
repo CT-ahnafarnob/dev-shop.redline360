@@ -17,16 +17,30 @@
     list-style: none;
     padding:2px ;
 }
-.{{section.id}} .links-inner h3{
+
+.{{section.id}} .links-inner h1,
+.{{section.id}} .links-inner h2,
+.{{section.id}} .links-inner h3,
+.{{section.id}} .links-inner h4,
+.{{section.id}} .links-inner h5,
+.{{section.id}} .links-inner h6 {
     font-family: var(--redline-font-family);
-    font-size: 18px;
     font-weight: 600;
     color:#b4b7b9 ;
-    text-transform: uppercase; 
+    text-transform: uppercase;
     word-wrap: break-word;
     word-break: break-word;
-    white-space: normal; 
+    white-space: normal;
 }
+
+/* Individual font sizes for each heading level */
+.{{section.id}} .links-inner h1 { font-size: 24px; }
+.{{section.id}} .links-inner h2 { font-size: 22px; }
+.{{section.id}} .links-inner h3 { font-size: 18px; }
+.{{section.id}} .links-inner h4 { font-size: 16px; }
+.{{section.id}} .links-inner h5 { font-size: 14px; }
+.{{section.id}} .links-inner h6 { font-size: 12px; }
+
 .{{section.id}} .links-inner a {
     font-family: var(--redline-font-family);
     font-size: 16px;
@@ -50,7 +64,7 @@
 .fsimage {
     float: right;
     width: 90px;
-    height: 45px;
+    height: auto;
 }
 .ssl {
     text-align: center;
@@ -60,6 +74,10 @@
     height: auto;
     display: block;
     margin: auto;
+}
+.sns_image {
+    width: 90px;
+    height:90px;
 }
 @media (max-width:768px) {
     .{{section.id}} .links-inner {
@@ -89,14 +107,22 @@
     margin-left:12px ;
     
 }
-
+}
 </style>
 
 <section class="{{section.id}}">
     <div class="links-inner">
                 {% comment %} Shop {% endcomment %}
             <ul>
-                <li><h3>{{section.settings.footer_menu.links[0].title}}</h3></li>
+
+                <li><{{section.settings.heading_level}}>
+                {% if section.settings.menu1_title !=blank %}
+                    {{section.settings.menu1_title}}
+                {% else %} 
+                {{section.settings.footer_menu.links[0].title}}
+                {% endif %} 
+                </{{section.settings.heading_level}}></li>
+
                 {% for sub-menu in section.settings.footer_menu.links[0].links %}
                     <li><a href="{{ sub-menu.url }}">{{ sub-menu.title }}</a></li>
                 {% endfor %}
@@ -104,16 +130,36 @@
         
             {% comment %} For Our Customer  {% endcomment %}
              <ul>
-                <li><h3>{{section.settings.footer_menu.links[1].title}}</h3></li>
+                <li><{{section.settings.heading_level}}>
+                {% if section.settings.menu2_title != blank %}
+                     {{section.settings.menu2_title}}
+                     {% else %}
+                {{section.settings.footer_menu.links[1].title}}    
+                {% endif %}
+                </{{section.settings.heading_level}}></li>
+
                 {% for sub-menu in section.settings.footer_menu.links[1].links %}
                     <li><a href="{{ sub-menu.url }}">{{ sub-menu.title }}</a></li>
                 {% endfor %}
             </ul>
+
+
                 {% comment %} FAST SHIPPING {% endcomment %}
             <ul > 
-                <li ><h3>{{section.settings.footer_menu.links[2].title}}</h3></li>
+                <li ><{{section.settings.heading_level}}>
+                 {% if section.settings.menu3_title != blank %}
+                       {{ section.settings.menu3_title}}
+                    {% else %}        
+                        {{section.settings.footer_menu.links[2].title}}
+                 {%endif%}
+                </{{section.settings.heading_level}}></li>
                 <div >
-                    <img class="fsimage" src="{{ 'fast-shipping.png' | asset_url }}" width="120" height="50" alt="SHIPPING ICON">
+                    {% if section.settings.fshipping_image !=blank %}
+                        <img class="fsimage" src="{{section.settings.fshipping_image |  image_url }}" width="90" height="45" alt="SHIPPING ICON">
+                        {% else %}
+                        <img class="fsimage" src="{{ 'fast-shipping.png' | asset_url }}" width="90" height="45" alt="SHIPPING ICON"> 
+                    {%endif%}
+                    
                     <p>{{section.settings.ship_details}}</p>
                     
                 </div>
@@ -121,11 +167,32 @@
             
             </ul>
             <ul>
-                <li><h3>SAFE & SECURE SHOPPING</h3></li>
+                <li><{{section.settings.heading_level}}>
+                 {% if section.settings.menu4_title != blank %}
+                       {{ section.settings.menu4_title}}
+                    {% else %}        
+                            SAFE & SECURE SHOPPING
+                    {% endif %}
+                </{{section.settings.heading_level}}></li>
+                          
                     <div class="ssl">
-                    <img src="{{ 'ssl-secure-80x.png' | asset_url }}" width="90" height="90" alt="SSL">
-                    <img src="{{ 'privacy-guarantee-80x.png' | asset_url }}" width="90" height="90" alt="SSL">
-                    <div class="verified-icon">{% render 'verified-reviews.liquid' | strip  %}</div>
+                     {% if section.settings.ssl_image !=blank %}
+                        <img src="{{section.settings.ssl_image |  image_url }}" width="90" height="90" alt="SSL" class="sns_image">
+                        {% else %}
+                         <img src="{{ 'ssl-secure-80x.png' | asset_url }}" width="90" height="90" alt="SSL">
+                     {% endif %}  
+
+                    {% if section.settings.privacy_image !=blank %}
+                        <img src="{{section.settings.privacy_image |  image_url }}" width="90" height="90" alt="SSL" class="sns_image">
+                        {% else %}
+                         <img src="{{ 'privacy-guarantee-80x.png' | asset_url }}" width="90" height="90" alt="SSL">
+                     {% endif %} 
+                    {% if section.settings.Verified_image !=blank %}
+                        <img src="{{section.settings.Verified_image |  image_url }}" width="90" height="90" alt="Verified Image" class="verified-icon">
+                        {% else %}
+                         <div class="verified-icon">{% render 'verified-reviews.liquid' | strip  %}</div>
+                     {% endif %} 
+                    
                     </div>
             </ul>
             
@@ -147,11 +214,84 @@
                 "label": "Footer Menu"
             },
             {
-                "type": "text",
+                "type": "richtext",
                 "id": "ship_details",
-                "label": "Add Paragrapgh",
-                "default": "With multiple distribution points around the USA, we can ship your order from the closest warehouse for lightning fast delivery."
+                "label": "Add Paragraph",
+                "default": "<p>With multiple distribution points around the USA, we can ship your order from the closest warehouse for lightning fast delivery.</p>"
+            },
+            {
+                "type": "image_picker",
+                "id": "fshipping_image",
+                "label": "Change Fast Shipping Icon"
+            },
+            {
+                "type": "image_picker",
+                "id": "ssl_image",
+                "label": "Change SSL Image"
+            },
+            {
+                "type": "image_picker",
+                "id": "privacy_image",
+                "label": "Change Privacy Image"
+            },
+            {
+                "type": "image_picker",
+                "id": "Verified_image",
+                "label": "Chnage Verified Review Image"
+            },
+            {
+                "type": "text",
+                "id": "menu1_title",
+                "label": "Menu 1 Heading"
+            },
+            {
+                "type": "text",
+                "id": "menu2_title",
+                "label": "Menu 2 Heading"
+            },
+            {
+                "type": "text",
+                "id": "menu3_title",
+                "label": "Menu 3 Heading"
+            },
+            {
+                "type": "text",
+                "id": "menu4_title",
+                "label": "Menu 4 Heading"
+            },
+            {
+                "type": "select",
+                "id": "heading_level",
+                "label": "Heading Level",
+                "default": "h2",
+                "options": [
+            {
+                "value": "h1",
+                "label": "H1 - Largest"
+            },
+            {
+                "value": "h2", 
+                "label": "H2 - Large"
+            },
+            {
+                "value": "h3",
+                "label": "H3 - Medium"
+            },
+            {
+                "value": "h4",
+                "label": "H4 - Small"
+            },
+            {
+                "value": "h5",
+                "label": "H5 - Smaller"
+            },
+            {
+                "value": "h6",
+                "label": "H6 - Smallest"
             }
+        ],
+                 "info": "Choose the heading size for your text"
+        }
            
         ],
         "presets": [
