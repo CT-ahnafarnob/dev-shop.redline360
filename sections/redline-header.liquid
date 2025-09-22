@@ -88,23 +88,19 @@
         max-width: 220px;
         margin:20px;
     }
-
     .{{section.id}} .carButton:hover {
         background: #a83530;
     }
-
     .{{section.id}} .carButton svg {
         width: 40px;
         height: 16px;
         fill: white;
     }
-
     .{{section.id}} .carButton span {
         color: white;
         font-weight: bold;
         font-size: 16px;
     }
-
     /* Menu */
     .{{section.id}} .menu-section, .main-nav {
         list-style: none;
@@ -130,7 +126,6 @@
         width: 50%;
   
     }
-
     .{{section.id}} .menu-content a{
         text-decoration: none;
         text-transform: none;
@@ -151,14 +146,12 @@
         font-weight: bold;
         font-size: 16px;
     }
-
     .{{section.id}} .mobile-menu-toggle {
         display: none;
         flex-direction: column;
         cursor: pointer;
         padding: 5px;
     }   
-
     /* Mobile */
     @media (max-width: 768px) {
     .{{section.id}} {
@@ -187,24 +180,22 @@
     .{{section.id}} .mobile-menu-toggle {
         display: flex;
     }
-
     /* Second row: Search takes full width */
     .{{section.id}} .search-wrapper {
         order: 4;
         width: 100%;
         flex-basis: 100%;
-       
+        overflow: hidden; 
+        transition: all 0.3s ease; 
     }
     
     .{{section.id}} .upper-container input {
         width: 100%;
         font-size: 14px;
     }
-
     .{{section.id}} .lower-part {
         display: none;
     }
-
     .{{section.id}} .lower-part.mobile-visible {
         display: flex;
         flex-direction: column;
@@ -228,7 +219,6 @@
         margin: -9px;
         padding: 0px;
         gap: 0;
-
     }
     
     .{{section.id}} .menu-content {
@@ -239,7 +229,6 @@
         box-shadow: none;
         border: 1px solid #eee;
         margin-top: 5px;
-
     }
   
     
@@ -248,10 +237,8 @@
         height: 3px;
         background-color: #333;
         margin: 2px 0;
-
     }
     }
-
 /* Tablet Styles */
 @media (max-width: 1024px) and (min-width: 769px) {
     .{{section.id}} .upper-container input {
@@ -263,7 +250,6 @@
     }
 }
 </style>
-
 <section class="{{section.id}}">
     <div class="upper-container">
         
@@ -293,7 +279,6 @@
         </ul>
         
     </div>
-
      <!-- Mobile menu toggle -->
     <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
     <span></span>
@@ -337,7 +322,6 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-
             {% else %}
                 <!-- Default Navigation -->
                 <ul class="main-nav">
@@ -369,8 +353,6 @@ function toggleMenu(header) {
             }
         }
     });
-
-
     if (content.style.display === 'none' || !content.style.display) {
         content.style.display = 'block';
         content.style.textAlign = 'left';
@@ -384,13 +366,34 @@ function toggleMenu(header) {
 let lastScrollY = 0;
 let scrollTimeout;
 
- window.addEventListener('scroll', function() {
-        if (window.innerWidth <= 768) return; // Ignore mobile
-        const lowerPart = document.querySelector('.{{section.id}} .lower-part');
-        if (!lowerPart) return;
-        const scrollPosition = window.scrollY;
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+    clearTimeout(scrollTimeout);
+    
+    scrollTimeout = setTimeout(() => {
+        if (window.innerWidth <= 768) {
+            // Mobile: Hide/show search wrapper
+            const searchWrapper = document.querySelector('.{{section.id}} .search-wrapper');
+            if (!searchWrapper) return;
+            
+            if (scrollPosition > 50) {
+                searchWrapper.style.maxHeight = '0';
+                searchWrapper.style.opacity = '0';
+                searchWrapper.style.paddingTop = '0';
+                searchWrapper.style.paddingBottom = '0';
+                searchWrapper.style.marginBottom = '0';
+            } else {
+                searchWrapper.style.maxHeight = '60px'; 
+                searchWrapper.style.opacity = '1';
+                searchWrapper.style.paddingTop = '';
+                searchWrapper.style.paddingBottom = '';
+                searchWrapper.style.marginBottom = '';
+            }
+        } else {
+            // Desktop: Hide/show lower part (existing functionality)
+            const lowerPart = document.querySelector('.{{section.id}} .lower-part');
+            if (!lowerPart) return;
+            
             if (scrollPosition > 50) {
                 lowerPart.style.transition = 'all 0.5s ease';
                 lowerPart.style.maxHeight = '0';
@@ -404,9 +407,11 @@ let scrollTimeout;
                 lowerPart.style.paddingTop = '';
                 lowerPart.style.paddingBottom = '';
             }
-        }, 10); 
-        lastScrollY = scrollPosition;
-    });
+        }
+    }, 10); 
+    
+    lastScrollY = scrollPosition;
+});
 
 // Ensure proper initial state
 document.addEventListener('DOMContentLoaded', function() {
@@ -415,11 +420,13 @@ document.addEventListener('DOMContentLoaded', function() {
         lowerPart.classList.add('visible');
     }
 });
+
 function toggleMobileMenu() {
     const lowerPart = document.querySelector('.{{section.id}} .lower-part');
     lowerPart.classList.toggle('mobile-visible');
 }
 </script>
+
 {% schema %}
 {
     "name": "Redline Header",
