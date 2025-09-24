@@ -123,7 +123,14 @@
                 {% endif %} 
                 </{{section.settings.heading_level}}></li>
 
+                <div>
+                {{ section.settings.menu1_title }}
                 {% for sub-menu in section.settings.footer_menu.links[0].links %}
+                    <li><a href="{{ sub-menu.url }}">{{ sub-menu.title }}</a></li>
+                {% endfor %}
+                </div>
+                {{ section.settings.menu2_title }}
+                {% for sub-menu in section.settings.footer_menu_2.links[0].links %}
                     <li><a href="{{ sub-menu.url }}">{{ sub-menu.title }}</a></li>
                 {% endfor %}
             </ul>
@@ -209,8 +216,23 @@
     },
     "settings": [
             {
+                "type": "text",
+                "id": "menu1_title",
+                "label": "Menu 1 Heading"
+            },
+            {
                 "type": "link_list",
                 "id": "footer_menu",
+                "label": "Footer Menu"
+            },
+            {
+                "type": "text",
+                "id": "menu2_title",
+                "label": "Menu 2 Heading"
+            },
+            {
+                "type": "link_list",
+                "id": "footer_menu_2",
                 "label": "Footer Menu"
             },
             {
@@ -238,16 +260,6 @@
                 "type": "image_picker",
                 "id": "Verified_image",
                 "label": "Chnage Verified Review Image"
-            },
-            {
-                "type": "text",
-                "id": "menu1_title",
-                "label": "Menu 1 Heading"
-            },
-            {
-                "type": "text",
-                "id": "menu2_title",
-                "label": "Menu 2 Heading"
             },
             {
                 "type": "text",
