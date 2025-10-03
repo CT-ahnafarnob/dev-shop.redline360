@@ -69,7 +69,7 @@
           "settings": {
             "part_image": "shopify://shop_images/part-1.webp",
             "part_name": "Coilovers",
-            "part_link": ""
+            "part_link": "shopify://collections"
           }
         },
         "part_DabFMy": {
@@ -142,15 +142,6 @@
       "name": "Redline Part's Grid",
       "settings": {}
     },
-    "redline_slider_EUARiM": {
-      "type": "redline-slider",
-      "name": "Redline Slider",
-      "settings": {
-        "heading": "Customer Favorites",
-        "content": "Browse our most popular performance car parts and truck accessories. From aftermarket headlights and tail lights to suspension upgrades like coilovers and lowering springs, these top picks deliver the performance and style you’re looking for. See what other gearheads are loving!",
-        "featured_collection": "sensitive"
-      }
-    },
     "redline_both_side_text_abNphC": {
       "type": "redline-both-side-text",
       "name": "Redline Both Side Text",
@@ -161,6 +152,15 @@
         "right_para": "Subscribe to our email list for coupons, specials, and new product announcements.",
         "background_color": "#db4540",
         "text_color": "#ffffff"
+      }
+    },
+    "redline_slider_EUARiM": {
+      "type": "redline-slider",
+      "name": "Redline Slider",
+      "settings": {
+        "heading": "Customer Favorites",
+        "content": "Browse our most popular performance car parts and truck accessories. From aftermarket headlights and tail lights to suspension upgrades like coilovers and lowering springs, these top picks deliver the performance and style you’re looking for. See what other gearheads are loving!",
+        "featured_collection": "sensitive"
       }
     },
     "redline_large_grid_DYAkUa": {
@@ -265,6 +265,15 @@
         "content": "Time to upgrade—new performance parts just hit our store! From advanced coilovers and upgraded suspension to high-flow air filters and fuel management kits, we’ve got the latest gear to improve your ride’s power and handling. Get your hands on the newest performance parts online."
       }
     },
+    "redline_slider_Fq6kEM": {
+      "type": "redline-slider",
+      "name": "Redline Slider",
+      "settings": {
+        "heading": "Customer Favorites",
+        "content": "Browse our most popular performance car parts and truck accessories. From aftermarket headlights and tail lights to suspension upgrades like coilovers and lowering springs, these top picks deliver the performance and style you’re looking for. See what other gearheads are loving!",
+        "featured_collection": "slick-slider-colelction"
+      }
+    },
     "redline_news_grid_gREHK4": {
       "type": "redline-news-grid",
       "blocks": {
@@ -349,15 +358,6 @@
         "content": "Our mission is to bring you the best parts at the unapologetically low prices.",
         "url": "",
         "btn_label": "Shop now"
-      }
-    },
-    "redline_slider_Fq6kEM": {
-      "type": "redline-slider",
-      "name": "Redline Slider",
-      "settings": {
-        "heading": "Customer Favorites",
-        "content": "Browse our most popular performance car parts and truck accessories. From aftermarket headlights and tail lights to suspension upgrades like coilovers and lowering springs, these top picks deliver the performance and style you’re looking for. See what other gearheads are loving!",
-        "featured_collection": "slick-slider-colelction"
       }
     }
   },
