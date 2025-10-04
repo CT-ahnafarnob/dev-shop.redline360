@@ -12,8 +12,7 @@
     "banner": {
       "type": "main-collection-banner",
       "custom_css": [
-        "h1{text-align: center}",
-        " p{text-align: center }"
+        "div {text-align: center; margin: auto;}"
       ],
       "settings": {
         "show_collection_description": true,
