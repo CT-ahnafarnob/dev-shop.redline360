@@ -6,8 +6,8 @@
       <div class="faq-accordion">
         {%- for faq in collection.metafields.custom.faqs.value -%}
           <details class="faq-item">
-            <summary class="faq-question">{{ faq.question }}</summary>
-            <div class="faq-answer">{{ faq.answer | metafield_tag }}</div>
+            <summary class="faq-question">{{ faq.questions }}</summary>
+            <div class="faq-answer">{{ faq.answers | metafield_tag }}</div>
           </details>
         {%- endfor -%}
       </div>
