@@ -7,7 +7,9 @@
         {%- for faq in collection.metafields.custom.faqs.value -%}
           <details class="faq-item">
             <summary class="faq-question">{{ faq.questions }}</summary>
-            <div class="faq-answer">{{ faq.answer }}</div>
+            <div class="faq-answer">
+              {{ faq.answer.value }}
+            </div>
           </details>
         {%- endfor -%}
       </div>
@@ -31,7 +33,7 @@
   text-align: center;
   font-size: 3rem;
   margin-bottom: 2rem;
-  font-weight: 600
+  font-weight: 600;
 }
 
 .faq-accordion {
@@ -86,9 +88,23 @@ details[open] .faq-question::after {
   margin-bottom: 1rem;
 }
 
+.faq-answer p:last-child {
+  margin-bottom: 0;
+}
+
 .faq-answer a {
   color: #007bff;
   text-decoration: underline;
+  cursor: pointer;
+}
+
+.faq-answer a:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.faq-answer a:visited {
+  color: #6c25be;
 }
 </style>
 
