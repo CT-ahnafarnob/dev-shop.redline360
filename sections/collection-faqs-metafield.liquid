@@ -7,7 +7,7 @@
         {%- for faq in collection.metafields.custom.faqs.value -%}
           <details class="faq-item">
             <summary class="faq-question">{{ faq.question }}</summary>
-            <div class="faq-answer">{{ faq.answer }}</div>
+            <div class="faq-answer">{{ faq.answer | metafield_tag }}</div>
           </details>
         {%- endfor -%}
       </div>
@@ -78,6 +78,15 @@ details[open] .faq-question::after {
   border-top: 1px solid #e0e0e0;
   color: #666;
   line-height: 1.6;
+}
+
+.faq-answer p {
+  margin-bottom: 1rem;
+}
+
+.faq-answer a {
+  color: #007bff;
+  text-decoration: underline;
 }
 </style>
 
