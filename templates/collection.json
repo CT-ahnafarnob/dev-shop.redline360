@@ -40,7 +40,7 @@
         "padding_bottom": 36
       }
     },
-     "faqs": {
+    "faqs": {
       "type": "collection-faqs-metafield",
       "settings": {}
     }
