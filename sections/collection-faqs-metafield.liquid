@@ -1,0 +1,94 @@
+{%- if collection.metafields.custom.faqs.value != blank -%}
+  <div class="collection-faqs-wrapper">
+    <div class="container">
+      <h2 class="faq-heading">Frequently Asked Questions</h2>
+      
+      <div class="faq-accordion">
+        {%- for faq in collection.metafields.custom.faqs.value -%}
+          <details class="faq-item">
+            <summary class="faq-question">{{ faq.question }}</summary>
+            <div class="faq-answer">{{ faq.answer }}</div>
+          </details>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+<style>
+.collection-faqs-wrapper {
+  padding: 3rem 0;
+  background: #f9f9f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.faq-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.faq-accordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+}
+
+.faq-question {
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-right: 2rem;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+details[open] .faq-question::after {
+  content: '−';
+}
+
+.faq-answer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+  color: #666;
+  line-height: 1.6;
+}
+</style>
+
+{% schema %}
+{
+  "name": "Collection FAQs",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Collection FAQs"
+    }
+  ]
+}
+{% endschema %}
