@@ -42,6 +42,7 @@
     },
     "faqs": {
       "type": "collection-faqs-metafield",
+      "disabled": true,
       "settings": {}
     },
     "collapsible_content_ag8icg": {
