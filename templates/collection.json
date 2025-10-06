@@ -149,7 +149,7 @@
       "settings": {
         "caption": "",
         "heading": "{{ collection.metafields.custom.faq_title.value }}",
-        "heading_size": "h1",
+        "heading_size": "h3",
         "heading_alignment": "center",
         "layout": "none",
         "container_color_scheme": "",
