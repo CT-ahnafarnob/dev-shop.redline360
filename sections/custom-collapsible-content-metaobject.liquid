@@ -82,7 +82,7 @@
                 >
                   <summary id="Summary-{{ block.id }}-{{ section.id }}">
                     {% render 'icon-accordion', icon: block.settings.icon %}
-                    <h4 class="accordion__title inline-richtext h1">
+                    <h4 class="custom_accordion__title inline-richtext h4">
                       {{ block.settings.heading | default: block.settings.page.title | escape }}
                     </h4>
                     {{- 'icon-caret.svg' | inline_asset_content -}}
