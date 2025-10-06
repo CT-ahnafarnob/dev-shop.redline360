@@ -64,7 +64,7 @@
       "name": "t:sections.collapsible_content.presets.name",
       "settings": {
         "caption": "",
-        "heading": "Frequently Asked Questions",
+        "heading": "{{ collection.metafields.custom.faq_title.value }}",
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "none",
