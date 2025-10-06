@@ -29,9 +29,9 @@
             </p>
           {% endif %}
           {%- if section.settings.heading != blank -%}
-            <h3 class="collapsible-content__heading inline-richtext {{ section.settings.heading_size }}">
+            <h1 class="custom_collapsible-content__heading inline-richtext {{ section.settings.heading_size }}">
               {{ section.settings.heading }}
-            </h3>
+            </h1>
           {%- else -%}
             <h3 class="visually-hidden">{{ 'accessibility.collapsible_content_title' | t }}</h3>
           {% endif %}
