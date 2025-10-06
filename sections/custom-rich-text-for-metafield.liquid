@@ -1,5 +1,7 @@
 {{ 'section-rich-text.css' | asset_url | stylesheet_tag }}
 
+{% if collection.metafields.custom.collection_top_header != blank %}
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -106,6 +108,9 @@
 
 </div>
 {% endif %}
+
+
+ {%- endif -%}
 
 {% schema %}
 {
