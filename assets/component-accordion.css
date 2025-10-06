@@ -64,3 +64,12 @@
 .accordion__content img {
   max-width: 100%;
 }
+
+custom a {
+    color: rgba(var(--color-link), var(--alpha-link));
+    text-underline-offset: .3rem;
+    text-decoration-thickness: .1rem;
+    transition: text-decoration-thickness var(--duration-short) ease;
+    text-decoration: underline;
+    color: #3870d4;
+}
