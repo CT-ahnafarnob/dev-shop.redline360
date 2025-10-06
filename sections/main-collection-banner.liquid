@@ -1,3 +1,4 @@
+{% if template.name == 'collection' and collection and collection.metafields.custom.collection_top_header == blank %}
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
 {{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
 
@@ -45,6 +46,8 @@
   </div>
 </div>
 
+ {%- endif -%}
+ 
 {% schema %}
 {
   "name": "t:sections.main-collection-banner.name",
