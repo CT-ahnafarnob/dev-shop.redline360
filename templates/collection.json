@@ -177,7 +177,7 @@
           "type": "column",
           "settings": {
             "title": "",
-            "text": "<p></p>{{ collection.metafields.custom.right_column_text | metafield_tag }}",
+            "text": "{{ collection.metafields.custom.right_column_text | metafield_tag }}",
             "link_label": "",
             "link": ""
           }
