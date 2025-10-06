@@ -1,3 +1,4 @@
+{% if template.name == 'collection' and collection and collection.metafields.custom.right_column_text and collection.metafields.custom.left_column_text != blank %}
 
 {{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
@@ -190,6 +191,8 @@
     </div>
   </div>
 </div>
+
+ {%- endif -%}
 
 {% schema %}
 {
